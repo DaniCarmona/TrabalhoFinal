@@ -15,6 +15,7 @@ class BdArmazemVacinasOpenHelper(context: Context?) : SQLiteOpenHelper(context, 
         if (db != null) {
             TabelaVacinas(db).cria()
             TabelaFornecedor(db).cria()
+            TabelaUtentes(db).cria()
         }
     }
 

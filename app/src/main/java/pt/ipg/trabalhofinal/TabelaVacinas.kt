@@ -39,8 +39,7 @@ class TabelaVacinas (db: SQLiteDatabase) : BaseColumns {
         const val CAMPO_STOCK = "stock"
 
         const val CAMPO_ID_FORNECEDOR = "id_fornecedor"
-        //categoria         livros
-        //     1   -------    N
+
     }
 
 }
