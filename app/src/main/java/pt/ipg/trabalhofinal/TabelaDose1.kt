@@ -5,9 +5,10 @@ import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
 import android.provider.BaseColumns
 
-class TabelaUtentes (db: SQLiteDatabase) : BaseColumns {
+class TabelaDose1(db: SQLiteDatabase) : BaseColumns {
     private val db : SQLiteDatabase = db
-    fun cria() = db?.execSQL("CREATE TABLE $NOME_TABELA (${BaseColumns._ID} INTEGER PRIMARY KEY AUTOINCREMENT, $CAMPO_NOME TEXT NOT NULL, $CAMPO_TELEFONE TEXT NOT NULL ,$CAMPO_EMAIL TEXT, $CAMPO_MORADA TEXT NOT NULL, $CAMPO_DATA_NASCIMENTO INTEGER NOT NULL, $CAMPO_DOSE INTEGER NOT NULL )"
+    fun cria() = db?.execSQL(
+        "CREATE TABLE $NOME_TABELA (${BaseColumns._ID} INTEGER PRIMARY KEY AUTOINCREMENT, $CAMPO_DATA_ADMINISTRACAO INTEGER NOT NULL, $CAMPO_ID_UTENTE INTEGER NOT NULL, $CAMPO_ID_VACINA INTEGER NOT NULL, FOREIGN KEY ($CAMPO_ID_UTENTE) REFERENCES ${TabelaUtentes.NOME_TABELA}, FOREIGN KEY ($CAMPO_ID_VACINA) REFERENCES ${TabelaVacinas.NOME_TABELA})"
     )
 
     fun insert(values: ContentValues): Long {
@@ -33,14 +34,10 @@ class TabelaUtentes (db: SQLiteDatabase) : BaseColumns {
     }
 
     companion object{
-        const val NOME_TABELA = "utentes"
-        const val CAMPO_NOME = "nome"
-        const val CAMPO_TELEFONE = "telefone"
-        const val CAMPO_EMAIL = "email"
-        const val CAMPO_MORADA = "morada"
-        const val CAMPO_DATA_NASCIMENTO = "datanascimento"
-        const val CAMPO_DOSE = "dose"
-
+        const val NOME_TABELA = "dose1"
+        const val CAMPO_DATA_ADMINISTRACAO = "dataadministracao"
+        const val CAMPO_ID_UTENTE = "id_utente"
+        const val CAMPO_ID_VACINA = "id_vacina"
 
     }
 
