@@ -281,5 +281,22 @@ class TesteBaseDados {
         db.close()
     }
 
+    @Test
+    fun consegueLerVacinas(){
+        val db = getBdArmazemVacinasOpenHelper().writableDatabase
+        val tabelaFornecedor = getTabelaFornecedor(db)
+        val fornecedor = Fornecedor(nome="Modern", email = "moderna@exemplo.com" )
+
+        fornecedor.id = insereFornecedor(tabelaFornecedor, fornecedor)
+
+        val tabelaVacinas = getTabelaVacinas(db);
+        val vacina = Vacina(stock = 456, idForncedor = fornecedor.id )
+        vacina.id = insereVacina(tabelaVacinas, vacina)
+
+        val vacinaBD = getVacinaBD(tabelaVacinas, vacina.id)
+        assertEquals(vacina, vacinaBD)
+
+        db.close()
+    }
 
 }
