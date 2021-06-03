@@ -154,9 +154,29 @@ class TesteBaseDados {
         val tabelaFornecedor = getTabelaFornecedor(db)
         val fornecedor = Fornecedor(nome="Pfizer", email = "pfizer@exemplo.com" )
 
-        fornecedor.id = insereFornecedor(getTabelaFornecedor(db), fornecedor)
+        fornecedor.id = insereFornecedor(tabelaFornecedor, fornecedor)
         val fornecedorBD = getFornecedorBD(tabelaFornecedor, fornecedor.id)
         assertEquals(fornecedor, fornecedorBD)
+        db.close()
+    }
+
+    @Test
+    fun consegueAlterarCategorias(){
+        val db = getBdArmazemVacinasOpenHelper().writableDatabase
+        val tabelaFornecedor = getTabelaFornecedor(db)
+        val fornecedor = Fornecedor(nome="?", email = "?" )
+
+        fornecedor.id = insereFornecedor(tabelaFornecedor, fornecedor)
+        fornecedor.nome="Moderna"
+        fornecedor.email="moderna@exemplo.com"
+        val registosAlterados = tabelaFornecedor.update(
+            fornecedor.toContentValues(),
+            "${BaseColumns._ID}=?",
+            arrayOf(fornecedor.id.toString())
+        )
+
+        assertEquals(1, registosAlterados)
+
         db.close()
     }
 
