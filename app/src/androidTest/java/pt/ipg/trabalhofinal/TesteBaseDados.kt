@@ -303,7 +303,7 @@ class TesteBaseDados {
     fun consegueInserirUtentes(){
         val db = getBdArmazemVacinasOpenHelper().writableDatabase
         val tabelaUtente = getTabelaUtentes(db)
-        val utente = Utente(nome="Aníbal Almeida", telefone = "+355 932978568",email = "almeida@gmail.com", morada = "Rua Vila de Trancoso, Guarda", dataNascimento = 2751970, dose = 2)
+        val utente = Utente(nome="Aníbal Almeida", telefone = "+355 932978568",email = "almeida@gmail.com", morada = "Rua Vila de Trancoso, Guarda", dataNascimento = 27051970, dose = 2)
 
         utente.id = insereUtente(tabelaUtente, utente)
         val utenteBD = getUtenteBD(tabelaUtente, utente.id)
@@ -322,7 +322,7 @@ class TesteBaseDados {
         utente.telefone="+355 965734894"
         utente.email="asousa@hotmai.com"
         utente.morada="Rua da Fonte, Viseu"
-        utente.dataNascimento=3161975
+        utente.dataNascimento=31061975
         utente.dose=1
         val registosAlterados = tabelaUtentes.update(
             utente.toContentValues(),
@@ -352,4 +352,19 @@ class TesteBaseDados {
 
         db.close()
     }
+
+    @Test
+    fun consegueLerUtentes(){
+        val db = getBdArmazemVacinasOpenHelper().writableDatabase
+        val tabelaUtentes = getTabelaUtentes(db)
+        val utente = Utente(nome="David Gonçalves", telefone = "+355 914369458",email = "dg@outlook.com", morada = "Rua dos Pinheiros, Braga", dataNascimento = 4011980, dose = 2)
+
+        utente.id = insereUtente(tabelaUtentes, utente)
+
+        val utenteBD = getUtenteBD(tabelaUtentes, utente.id)
+        assertEquals(utente, utenteBD)
+
+        db.close()
+    }
+
 }
