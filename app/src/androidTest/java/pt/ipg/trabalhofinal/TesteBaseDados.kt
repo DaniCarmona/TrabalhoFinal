@@ -148,6 +148,17 @@ class TesteBaseDados {
         db.close()
     }
 
+    @Test
+    fun consegueInserirFornecedores(){
+        val db = getBdArmazemVacinasOpenHelper().writableDatabase
+        val tabelaFornecedor = getTabelaFornecedor(db)
+        val fornecedor = Fornecedor(nome="Pfizer", email = "pfizer@exemplo.com" )
+
+        fornecedor.id = insereFornecedor(getTabelaFornecedor(db), fornecedor)
+        val fornecedorBD = getFornecedorBD(tabelaFornecedor, fornecedor.id)
+        assertEquals(fornecedor, fornecedorBD)
+        db.close()
+    }
 
 
 }
