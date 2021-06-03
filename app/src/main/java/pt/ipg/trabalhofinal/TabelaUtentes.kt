@@ -41,7 +41,7 @@ class TabelaUtentes (db: SQLiteDatabase) : BaseColumns {
         const val CAMPO_DATA_NASCIMENTO = "datanascimento"
         const val CAMPO_DOSE = "dose"
 
-
+        val TODOS_CAMPOS =arrayOf(BaseColumns._ID, CAMPO_NOME, CAMPO_TELEFONE, CAMPO_EMAIL, CAMPO_MORADA, CAMPO_DATA_NASCIMENTO, CAMPO_DOSE)
     }
 
 }

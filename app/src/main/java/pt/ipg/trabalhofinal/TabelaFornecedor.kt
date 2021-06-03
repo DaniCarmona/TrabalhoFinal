@@ -36,6 +36,8 @@ class TabelaFornecedor (db: SQLiteDatabase) : BaseColumns {
         const val NOME_TABELA = "fornecedor"
         const val CAMPO_NOME = "nome"
         const val CAMPO_EMAIL = "email"
+
+        val TODOS_CAMPOS =arrayOf(BaseColumns._ID, CAMPO_NOME, CAMPO_EMAIL)
     }
 
 }

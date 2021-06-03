@@ -35,10 +35,10 @@ class TabelaVacinas (db: SQLiteDatabase) : BaseColumns {
 
     companion object{
         const val NOME_TABELA = "vacinas"
-
         const val CAMPO_STOCK = "stock"
-
         const val CAMPO_ID_FORNECEDOR = "id_fornecedor"
+
+        val TODOS_CAMPOS =arrayOf(BaseColumns._ID, CAMPO_STOCK, CAMPO_ID_FORNECEDOR)
 
     }
 

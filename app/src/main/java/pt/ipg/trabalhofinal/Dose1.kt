@@ -16,7 +16,7 @@ data class Dose1 (var id: Long = -1, var data: Int, var idUtente: Long, var idVa
     }
 
     companion object {
-        fun fromCursor(cursor: Cursor): Dose2 {
+        fun fromCursor(cursor: Cursor): Dose1 {
             val colId = cursor.getColumnIndex(BaseColumns._ID)
             val colData = cursor.getColumnIndex(TabelaDose1.CAMPO_DATA_ADMINISTRACAO)
             val colIdUtente = cursor.getColumnIndex(TabelaDose1.CAMPO_ID_UTENTE)
@@ -27,7 +27,7 @@ data class Dose1 (var id: Long = -1, var data: Int, var idUtente: Long, var idVa
             val idUtente = cursor.getLong(colIdUtente)
             val idVacina = cursor.getLong(colIdUtente)
 
-            return Dose2(id, data, idUtente, idVacina)
+            return Dose1(id, data, idUtente, idVacina)
         }
     }
 }

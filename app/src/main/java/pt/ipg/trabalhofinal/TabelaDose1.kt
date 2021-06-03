@@ -39,6 +39,8 @@ class TabelaDose1(db: SQLiteDatabase) : BaseColumns {
         const val CAMPO_ID_UTENTE = "id_utente"
         const val CAMPO_ID_VACINA = "id_vacina"
 
+        val TODOS_CAMPOS =arrayOf(BaseColumns._ID, CAMPO_DATA_ADMINISTRACAO, CAMPO_ID_UTENTE, CAMPO_ID_UTENTE)
+
     }
 
 }
