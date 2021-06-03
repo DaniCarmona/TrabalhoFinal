@@ -57,7 +57,79 @@ class TesteBaseDados {
         return id
     }
 
+    private fun getUtenteBD(
+        tabelaUtentes: TabelaUtentes, id: Long    ): Utente {
+        val cursor = tabelaUtentes.query(
+            TabelaUtentes.TODOS_CAMPOS,
+            "${BaseColumns._ID}=?",
+            arrayOf(id.toString()),
+            null,
+            null,
+            null
+        )
+        assertNotNull(cursor)
+        assert(cursor!!.moveToNext())
+        return Utente.fromCursor(cursor)
+    }
 
+    private fun getVacinaBD(
+        tabelaVacinas: TabelaVacinas, id: Long    ): Vacina {
+        val cursor = tabelaVacinas.query(
+            TabelaVacinas.TODOS_CAMPOS,
+            "${BaseColumns._ID}=?",
+            arrayOf(id.toString()),
+            null,
+            null,
+            null
+        )
+        assertNotNull(cursor)
+        assert(cursor!!.moveToNext())
+        return Vacina.fromCursor(cursor)
+    }
+    private fun getFornecedorBD(
+        tabelaFornecedor: TabelaFornecedor, id: Long    ): Fornecedor {
+        val cursor = tabelaFornecedor.query(
+            TabelaFornecedor.TODOS_CAMPOS,
+            "${BaseColumns._ID}=?",
+            arrayOf(id.toString()),
+            null,
+            null,
+            null
+        )
+        assertNotNull(cursor)
+        assert(cursor!!.moveToNext())
+        return Fornecedor.fromCursor(cursor)
+    }
+
+    private fun getDose1BD(
+        tabelaDose1: TabelaDose1, id: Long): Dose1 {
+        val cursor = tabelaDose1.query(
+            TabelaDose1.TODOS_CAMPOS,
+            "${BaseColumns._ID}=?",
+            arrayOf(id.toString()),
+            null,
+            null,
+            null
+        )
+        assertNotNull(cursor)
+        assert(cursor!!.moveToNext())
+        return Dose1.fromCursor(cursor)
+    }
+
+    private fun getDose2BD(
+        tabelaDose2: TabelaDose2, id: Long    ): Dose2 {
+        val cursor = tabelaDose2.query(
+            TabelaDose2.TODOS_CAMPOS,
+            "${BaseColumns._ID}=?",
+            arrayOf(id.toString()),
+            null,
+            null,
+            null
+        )
+        assertNotNull(cursor)
+        assert(cursor!!.moveToNext())
+        return Dose2.fromCursor(cursor)
+    }
 
 
 
