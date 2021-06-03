@@ -23,7 +23,7 @@ class TesteBaseDados {
 
     private fun getTabelaUtentes(db: SQLiteDatabase) = TabelaUtentes(db)
     private fun getTabelaVacinas(db: SQLiteDatabase) = TabelaVacinas(db)
-    private fun getTabelaDose1(db: SQLiteDatabase) = TabelaDose1(db)
+    private fun getTabelaDoses(db: SQLiteDatabase) = TabelaDoses(db)
 
     private fun insereUtente(tabelaUtentes: TabelaUtentes, utente: Utente): Long {
         val id = tabelaUtentes.insert(utente.toContentValues())
@@ -37,8 +37,8 @@ class TesteBaseDados {
         return id
     }
 
-    private fun insereDose1(tabelaDose1: TabelaDose1, dose1: Dose1): Long {
-        val id = tabelaDose1.insert(dose1.toContentValues())
+    private fun insereDoses(tabelaDoses: TabelaDoses, doses: Doses): Long {
+        val id = tabelaDoses.insert(doses.toContentValues())
         assertNotEquals(-1, id)
         return id
     }
@@ -73,10 +73,10 @@ class TesteBaseDados {
         return Vacina.fromCursor(cursor)
     }
 
-    private fun getDose1BD(
-        tabelaDose1: TabelaDose1, id: Long): Dose1 {
-        val cursor = tabelaDose1.query(
-            TabelaDose1.TODOS_CAMPOS,
+    private fun getDosesBD(
+        tabelaDoses: TabelaDoses, id: Long): Doses {
+        val cursor = tabelaDoses.query(
+            TabelaDoses.TODOS_CAMPOS,
             "${BaseColumns._ID}=?",
             arrayOf(id.toString()),
             null,
@@ -85,7 +85,7 @@ class TesteBaseDados {
         )
         assertNotNull(cursor)
         assert(cursor!!.moveToNext())
-        return Dose1.fromCursor(cursor)
+        return Doses.fromCursor(cursor)
     }
 
     @Before

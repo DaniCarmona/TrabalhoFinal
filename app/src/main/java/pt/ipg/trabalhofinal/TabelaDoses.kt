@@ -5,10 +5,10 @@ import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
 import android.provider.BaseColumns
 
-class TabelaDose1(db: SQLiteDatabase) : BaseColumns {
+class TabelaDoses(db: SQLiteDatabase) : BaseColumns {
     private val db : SQLiteDatabase = db
     fun cria() = db?.execSQL(
-        "CREATE TABLE $NOME_TABELA (${BaseColumns._ID} INTEGER PRIMARY KEY AUTOINCREMENT, $CAMPO_DATA_ADMINISTRACAO INTEGER NOT NULL, $CAMPO_ID_UTENTE INTEGER NOT NULL, $CAMPO_ID_VACINA INTEGER NOT NULL, FOREIGN KEY ($CAMPO_ID_UTENTE) REFERENCES ${TabelaUtentes.NOME_TABELA}, FOREIGN KEY ($CAMPO_ID_VACINA) REFERENCES ${TabelaVacinas.NOME_TABELA})"
+        "CREATE TABLE $NOME_TABELA (${BaseColumns._ID} INTEGER PRIMARY KEY AUTOINCREMENT, $CAMPO_DATA_ADMINISTRACAO INTEGER NOT NULL, $CAMPO_DOSE INTEGER NOT NULL, $CAMPO_ID_UTENTE INTEGER NOT NULL, $CAMPO_ID_VACINA INTEGER NOT NULL, FOREIGN KEY ($CAMPO_ID_UTENTE) REFERENCES ${TabelaUtentes.NOME_TABELA}, FOREIGN KEY ($CAMPO_ID_VACINA) REFERENCES ${TabelaVacinas.NOME_TABELA})"
     )
 
     fun insert(values: ContentValues): Long {
@@ -35,12 +35,14 @@ class TabelaDose1(db: SQLiteDatabase) : BaseColumns {
     }
 
     companion object{
-        const val NOME_TABELA = "dose1"
+        const val NOME_TABELA = "doses"
         const val CAMPO_DATA_ADMINISTRACAO = "dataadministracao"
+        const val CAMPO_DOSE = "dose"
         const val CAMPO_ID_UTENTE = "id_utente"
         const val CAMPO_ID_VACINA = "id_vacina"
 
-        val TODOS_CAMPOS =arrayOf(BaseColumns._ID, CAMPO_DATA_ADMINISTRACAO, CAMPO_ID_UTENTE, CAMPO_ID_UTENTE)
+
+        val TODOS_CAMPOS =arrayOf(BaseColumns._ID, CAMPO_DATA_ADMINISTRACAO, CAMPO_DOSE, CAMPO_ID_UTENTE, CAMPO_ID_UTENTE)
 
     }
 
