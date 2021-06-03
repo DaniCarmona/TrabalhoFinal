@@ -181,6 +181,25 @@ class TesteBaseDados {
     }
 
     @Test
+    fun consegueApagarFornecedores(){
+        val db = getBdArmazemVacinasOpenHelper().writableDatabase
+        val tabelaFornecedor = getTabelaFornecedor(db)
+        val fornecedor = Fornecedor(nome="?", email = "?" )
+
+
+        fornecedor.id = insereFornecedor(tabelaFornecedor, fornecedor)
+
+        val registosEliminados =tabelaFornecedor.delete(
+            "${BaseColumns._ID}=?",
+            arrayOf(fornecedor.id.toString())
+        )
+
+        assertEquals(1, registosEliminados)
+
+        db.close()
+    }
+
+    @Test
     fun consegueLerFornecedores(){
         val db = getBdArmazemVacinasOpenHelper().writableDatabase
         val tabelaFornecedor = getTabelaFornecedor(db)
