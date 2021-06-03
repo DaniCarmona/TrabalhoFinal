@@ -161,7 +161,7 @@ class TesteBaseDados {
     }
 
     @Test
-    fun consegueAlterarCategorias(){
+    fun consegueAlterarFornecedores(){
         val db = getBdArmazemVacinasOpenHelper().writableDatabase
         val tabelaFornecedor = getTabelaFornecedor(db)
         val fornecedor = Fornecedor(nome="?", email = "?" )
@@ -296,6 +296,18 @@ class TesteBaseDados {
         val vacinaBD = getVacinaBD(tabelaVacinas, vacina.id)
         assertEquals(vacina, vacinaBD)
 
+        db.close()
+    }
+
+    @Test
+    fun consegueInserirUtentes(){
+        val db = getBdArmazemVacinasOpenHelper().writableDatabase
+        val tabelaUtente = getTabelaUtentes(db)
+        val utente = Utente(nome="Aníbal Almeida", telefone = "+355 932978568",email = "almeida@gmail.com", morada = "Rua Vila de Trancoso, Guarda", dataNascimento = 2751970, dose = 2)
+
+        utente.id = insereUtente(tabelaUtente, utente)
+        val utenteBD = getUtenteBD(tabelaUtente, utente.id)
+        assertEquals(utente, utenteBD)
         db.close()
     }
 
