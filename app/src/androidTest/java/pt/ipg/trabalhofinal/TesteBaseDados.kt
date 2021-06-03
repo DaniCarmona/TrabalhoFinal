@@ -315,7 +315,7 @@ class TesteBaseDados {
     fun consegueAlterarUtentes(){
         val db = getBdArmazemVacinasOpenHelper().writableDatabase
         val tabelaUtentes = getTabelaUtentes(db)
-        val utente = Utente(nome="Aníbal Almeida", telefone = "+355 932978568",email = "almeida@gmail.com", morada = "Rua Vila de Trancoso, Guarda", dataNascimento = 2751970, dose = 2)
+        val utente = Utente(nome="?", telefone = "?",email = "?", morada = "?", dataNascimento = 0, dose = 0)
 
         utente.id = insereUtente(tabelaUtentes, utente)
         utente.nome="Amilcar Sousa"
@@ -335,4 +335,21 @@ class TesteBaseDados {
         db.close()
     }
 
+    @Test
+    fun consegueApagarUtentes(){
+        val db = getBdArmazemVacinasOpenHelper().writableDatabase
+        val tabelaUtentes = getTabelaUtentes(db)
+        val utente = Utente(nome="?", telefone = "?",email = "?", morada = "?", dataNascimento = 0, dose = 0)
+
+        utente.id = insereUtente(tabelaUtentes, utente)
+
+        val registosEliminados =tabelaUtentes.delete(
+            "${BaseColumns._ID}=?",
+            arrayOf(utente.id.toString())
+        )
+
+        assertEquals(1, registosEliminados)
+
+        db.close()
+    }
 }
