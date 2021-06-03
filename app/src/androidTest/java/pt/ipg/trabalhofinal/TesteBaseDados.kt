@@ -311,4 +311,28 @@ class TesteBaseDados {
         db.close()
     }
 
+    @Test
+    fun consegueAlterarUtentes(){
+        val db = getBdArmazemVacinasOpenHelper().writableDatabase
+        val tabelaUtentes = getTabelaUtentes(db)
+        val utente = Utente(nome="Aníbal Almeida", telefone = "+355 932978568",email = "almeida@gmail.com", morada = "Rua Vila de Trancoso, Guarda", dataNascimento = 2751970, dose = 2)
+
+        utente.id = insereUtente(tabelaUtentes, utente)
+        utente.nome="Amilcar Sousa"
+        utente.telefone="+355 965734894"
+        utente.email="asousa@hotmai.com"
+        utente.morada="Rua da Fonte, Viseu"
+        utente.dataNascimento=3161975
+        utente.dose=1
+        val registosAlterados = tabelaUtentes.update(
+            utente.toContentValues(),
+            "${BaseColumns._ID}=?",
+            arrayOf(utente.id.toString())
+        )
+
+        assertEquals(1, registosAlterados)
+
+        db.close()
+    }
+
 }
