@@ -106,7 +106,7 @@ class TesteBaseDados {
     fun consegueInserirVacinas(){
         val db = getBdArmazemVacinasOpenHelper().writableDatabase
         val tabelaVacinas = getTabelaVacinas(db);
-        val vacina = Vacina(stock = 2000, forncedor = "AstraZeneca", email = "astrazeneca@exemplo.com")
+        val vacina = Vacina(stock = 2000, nomeVacina = "AstraZeneca", email = "astrazeneca@exemplo.com")
 
         vacina.id = insereVacina(tabelaVacinas, vacina)
 
@@ -119,12 +119,12 @@ class TesteBaseDados {
     fun consegueAlterarVacinas(){
         val db = getBdArmazemVacinasOpenHelper().writableDatabase
         val tabelaVacinas = getTabelaVacinas(db);
-        val vacina = Vacina(stock = 0, forncedor ="?", email = "?")
+        val vacina = Vacina(stock = 0, nomeVacina ="?", email = "?")
 
         vacina.id = insereVacina(tabelaVacinas, vacina)
 
         vacina.stock = 320
-        vacina.forncedor = "Pfizer"
+        vacina.nomeVacina = "Pfizer"
         vacina.email = "pfizer@exemplo.com"
 
         val registosAlterados = tabelaVacinas.update(
@@ -144,7 +144,7 @@ class TesteBaseDados {
     fun consegueApagarVacinas(){
         val db = getBdArmazemVacinasOpenHelper().writableDatabase
         val tabelaVacinas = getTabelaVacinas(db);
-        val vacina = Vacina(stock = 0,forncedor ="?", email = "?" )
+        val vacina = Vacina(stock = 0,nomeVacina ="?", email = "?" )
 
         vacina.id = insereVacina(tabelaVacinas, vacina)
 
@@ -162,7 +162,7 @@ class TesteBaseDados {
     fun consegueLerVacinas(){
         val db = getBdArmazemVacinasOpenHelper().writableDatabase
         val tabelaVacinas = getTabelaVacinas(db);
-        val vacina = Vacina(stock = 456,forncedor ="Moderna", email = "moderna@exemplo.com")
+        val vacina = Vacina(stock = 456,nomeVacina ="Moderna", email = "moderna@exemplo.com")
 
         vacina.id = insereVacina(tabelaVacinas, vacina)
 
@@ -249,7 +249,7 @@ class TesteBaseDados {
         utente.id = insereUtente(tabelaUtente, utente)
 
         val tabelaVacinas = getTabelaVacinas(db);
-        val vacina = Vacina(stock = 200, forncedor = "AstrZeneca", email = "astrazeeca@exemplo.com")
+        val vacina = Vacina(stock = 200, nomeVacina = "AstrZeneca", email = "astrazeeca@exemplo.com")
 
         vacina.id = insereVacina(tabelaVacinas, vacina)
 
@@ -274,7 +274,7 @@ class TesteBaseDados {
         utente.id = insereUtente(tabelaUtente, utente)
 
         val tabelaVacinas = getTabelaVacinas(db);
-        val vacina = Vacina(stock = 450, forncedor = "AsZeneca", email = "astrazca@exemplo.com")
+        val vacina = Vacina(stock = 450, nomeVacina = "AsZeneca", email = "astrazca@exemplo.com")
 
         vacina.id = insereVacina(tabelaVacinas, vacina)
 
@@ -304,7 +304,7 @@ class TesteBaseDados {
         utente.id = insereUtente(tabelaUtente, utente)
 
         val tabelaVacinas = getTabelaVacinas(db);
-        val vacina = Vacina(stock = 200, forncedor = "AstrZeneca", email = "astrazeeca@exemplo.com")
+        val vacina = Vacina(stock = 200, nomeVacina = "AstrZeneca", email = "astrazeeca@exemplo.com")
 
         vacina.id = insereVacina(tabelaVacinas, vacina)
 
@@ -336,7 +336,7 @@ class TesteBaseDados {
         utente.id = insereUtente(tabelaUtente, utente)
 
         val tabelaVacinas = getTabelaVacinas(db);
-        val vacina = Vacina(stock = 280, forncedor = "AstrZenca", email = "astrazca@exemplo.com")
+        val vacina = Vacina(stock = 280, nomeVacina = "AstrZenca", email = "astrazca@exemplo.com")
 
         vacina.id = insereVacina(tabelaVacinas, vacina)
 
