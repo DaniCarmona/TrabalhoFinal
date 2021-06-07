@@ -269,12 +269,12 @@ class TesteBaseDados {
     fun consegueAlterarDoses(){
         val db = getBdArmazemVacinasOpenHelper().writableDatabase
         val tabelaUtente = getTabelaUtentes(db)
-        val utente = Utente(nome="Aníba Almeida", telefone = "+355 962978568",email = "almeda@gmail.com", morada = "Rua Vila de Trancso, Guarda", dataNascimento = 27061970, dose = 1)
+        val utente = Utente(nome="Daniel Martins", telefone = "+355 962978568",email = "martins@gmail.com", morada = "Rua Vila de Trancso, Guarda", dataNascimento = 27061970, dose = 1)
 
         utente.id = insereUtente(tabelaUtente, utente)
 
         val tabelaVacinas = getTabelaVacinas(db);
-        val vacina = Vacina(stock = 200, forncedor = "AstrZeneca", email = "astrazeeca@exemplo.com")
+        val vacina = Vacina(stock = 450, forncedor = "AsZeneca", email = "astrazca@exemplo.com")
 
         vacina.id = insereVacina(tabelaVacinas, vacina)
 
@@ -324,6 +324,31 @@ class TesteBaseDados {
 
         assertEquals(1, registosEliminados)
 
+        db.close()
+    }
+
+    @Test
+    fun consegueLerDoses(){
+        val db = getBdArmazemVacinasOpenHelper().writableDatabase
+        val tabelaUtente = getTabelaUtentes(db)
+        val utente = Utente(nome="Manuel Pereira", telefone = "+355 962978568",email = "almeda@gmail.com", morada = "Rua Sofia, Coimbra", dataNascimento = 15121980, dose = 2)
+
+        utente.id = insereUtente(tabelaUtente, utente)
+
+        val tabelaVacinas = getTabelaVacinas(db);
+        val vacina = Vacina(stock = 280, forncedor = "AstrZenca", email = "astrazca@exemplo.com")
+
+        vacina.id = insereVacina(tabelaVacinas, vacina)
+
+
+        val tabelaDoses = getTabelaDoses(db)
+        val doses = Doses(data = 1062021, dose = 2, idUtente = utente.id, idVacina = vacina.id)
+
+        doses.id = insereDoses(tabelaDoses, doses)
+
+
+        val dosesBD = getDosesBD(tabelaDoses, doses.id)
+        assertEquals(doses, dosesBD)
         db.close()
     }
 
