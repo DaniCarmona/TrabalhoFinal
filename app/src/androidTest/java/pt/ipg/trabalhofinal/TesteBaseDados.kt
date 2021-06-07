@@ -284,9 +284,6 @@ class TesteBaseDados {
 
         doses.id = insereDoses(tabelaDoses, doses)
 
-        doses.data = 31052021
-        doses.dose= 1
-
         val registosAlterados = tabelaDoses.update(
                 doses.toContentValues(),
                 "${BaseColumns._ID}=?",
@@ -294,6 +291,38 @@ class TesteBaseDados {
         )
 
         assertEquals(1, registosAlterados)
+
+        db.close()
+    }
+
+    @Test
+    fun consegueApagarDoses(){
+        val db = getBdArmazemVacinasOpenHelper().writableDatabase
+        val tabelaUtente = getTabelaUtentes(db)
+        val utente = Utente(nome="Aníba Almeida", telefone = "+355 962978568",email = "almeda@gmail.com", morada = "Rua Vila de Trancso, Guarda", dataNascimento = 27061970, dose = 1)
+
+        utente.id = insereUtente(tabelaUtente, utente)
+
+        val tabelaVacinas = getTabelaVacinas(db);
+        val vacina = Vacina(stock = 200, forncedor = "AstrZeneca", email = "astrazeeca@exemplo.com")
+
+        vacina.id = insereVacina(tabelaVacinas, vacina)
+
+
+        val tabelaDoses = getTabelaDoses(db)
+        val doses = Doses(data = 0, dose = 0, idUtente = utente.id, idVacina = vacina.id)
+
+        doses.id = insereDoses(tabelaDoses, doses)
+
+        doses.data = 31052021
+        doses.dose= 1
+
+        val registosEliminados =tabelaDoses.delete(
+                "${BaseColumns._ID}=?",
+                arrayOf(doses.id.toString())
+        )
+
+        assertEquals(1, registosEliminados)
 
         db.close()
     }
