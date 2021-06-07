@@ -74,7 +74,7 @@ class TesteBaseDados {
     }
 
     private fun getDosesBD(
-        tabelaDoses: TabelaDoses, id: Long): Doses {
+        tabelaDoses: TabelaDoses, id: Long  ): Doses {
         val cursor = tabelaDoses.query(
             TabelaDoses.TODOS_CAMPOS,
             "${BaseColumns._ID}=?",
@@ -239,5 +239,32 @@ class TesteBaseDados {
 
         db.close()
     }
+
+    @Test
+    fun consegueInserirDoses(){
+        val db = getBdArmazemVacinasOpenHelper().writableDatabase
+        val tabelaUtente = getTabelaUtentes(db)
+        val utente = Utente(nome="Aníba Almeida", telefone = "+355 962978568",email = "almeda@gmail.com", morada = "Rua Vila de Trancso, Guarda", dataNascimento = 27061970, dose = 1)
+
+        utente.id = insereUtente(tabelaUtente, utente)
+
+        val tabelaVacinas = getTabelaVacinas(db);
+        val vacina = Vacina(stock = 200, forncedor = "AstrZeneca", email = "astrazeeca@exemplo.com")
+
+        vacina.id = insereVacina(tabelaVacinas, vacina)
+
+
+        val tabelaDoses = getTabelaDoses(db)
+        val doses = Doses(data = 25052021, dose = 1, idUtente = utente.id, idVacina = vacina.id)
+
+        doses.id = insereDoses(tabelaDoses, doses)
+
+
+        val dosesBD = getDosesBD(tabelaDoses, doses.id)
+        assertEquals(doses, dosesBD)
+        db.close()
+    }
+
+
 
 }
