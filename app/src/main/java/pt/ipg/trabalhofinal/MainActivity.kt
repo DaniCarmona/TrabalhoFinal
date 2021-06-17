@@ -15,6 +15,7 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityMainBinding
+    private lateinit var menu: Menu
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,11 +33,16 @@ class MainActivity : AppCompatActivity() {
             Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                 .setAction("Action", null).show()
         }
+
+        DadosApp.activity = this
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         // Inflate the menu; this adds items to the action bar if it is present.
         menuInflater.inflate(R.menu.menu_lista_utentes, menu)
+        this.menu = menu
+        atualizaMenuListaUtentes(false)
+
         return true
     }
 
@@ -46,7 +52,13 @@ class MainActivity : AppCompatActivity() {
         // as you specify a parent activity in AndroidManifest.xml.
         return when (item.itemId) {
             R.id.action_settings -> true
-            else -> super.onOptionsItemSelected(item)
+            else -> {
+                if (DadosApp.listaUtentesFragment.processaOpcaoMenu(item)) {
+                    return true
+                } else {
+                    return super.onOptionsItemSelected(item)
+                }
+            }
         }
     }
 
@@ -54,5 +66,11 @@ class MainActivity : AppCompatActivity() {
         val navController = findNavController(R.id.nav_host_fragment_content_main)
         return navController.navigateUp(appBarConfiguration)
                 || super.onSupportNavigateUp()
+    }
+
+    fun atualizaMenuListaUtentes(mostraBotoesUtente : Boolean) {
+        menu.findItem(R.id.action_editar_utente).setVisible(mostraBotoesUtente)
+        menu.findItem(R.id.action_nova_dose).setVisible(mostraBotoesUtente)
+        menu.findItem(R.id.action_ver_doses_utente).setVisible(mostraBotoesUtente)
     }
 }
