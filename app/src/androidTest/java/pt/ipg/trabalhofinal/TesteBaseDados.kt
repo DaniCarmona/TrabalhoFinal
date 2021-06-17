@@ -37,7 +37,7 @@ class TesteBaseDados {
         return id
     }
 
-    private fun insereDoses(tabelaDoses: TabelaDoses, doses: Doses): Long {
+    private fun insereDoses(tabelaDoses: TabelaDoses, doses: Dose): Long {
         val id = tabelaDoses.insert(doses.toContentValues())
         assertNotEquals(-1, id)
         return id
@@ -74,7 +74,7 @@ class TesteBaseDados {
     }
 
     private fun getDosesBD(
-        tabelaDoses: TabelaDoses, id: Long  ): Doses {
+        tabelaDoses: TabelaDoses, id: Long  ): Dose {
         val cursor = tabelaDoses.query(
             TabelaDoses.TODOS_CAMPOS,
             "${BaseColumns._ID}=?",
@@ -85,7 +85,7 @@ class TesteBaseDados {
         )
         assertNotNull(cursor)
         assert(cursor!!.moveToNext())
-        return Doses.fromCursor(cursor)
+        return Dose.fromCursor(cursor)
     }
 
     @Before
@@ -255,7 +255,7 @@ class TesteBaseDados {
 
 
         val tabelaDoses = getTabelaDoses(db)
-        val doses = Doses(data = 25052021, dose = 1, idUtente = utente.id, idVacina = vacina.id)
+        val doses = Dose(data = 25052021, dose = 1, idUtente = utente.id, idVacina = vacina.id)
 
         doses.id = insereDoses(tabelaDoses, doses)
 
@@ -280,7 +280,7 @@ class TesteBaseDados {
 
 
         val tabelaDoses = getTabelaDoses(db)
-        val doses = Doses(data = 0, dose = 0, idUtente = utente.id, idVacina = vacina.id)
+        val doses = Dose(data = 0, dose = 0, idUtente = utente.id, idVacina = vacina.id)
 
         doses.id = insereDoses(tabelaDoses, doses)
 
@@ -310,7 +310,7 @@ class TesteBaseDados {
 
 
         val tabelaDoses = getTabelaDoses(db)
-        val doses = Doses(data = 0, dose = 0, idUtente = utente.id, idVacina = vacina.id)
+        val doses = Dose(data = 0, dose = 0, idUtente = utente.id, idVacina = vacina.id)
 
         doses.id = insereDoses(tabelaDoses, doses)
 
@@ -342,7 +342,7 @@ class TesteBaseDados {
 
 
         val tabelaDoses = getTabelaDoses(db)
-        val doses = Doses(data = 1062021, dose = 2, idUtente = utente.id, idVacina = vacina.id)
+        val doses = Dose(data = 1062021, dose = 2, idUtente = utente.id, idVacina = vacina.id)
 
         doses.id = insereDoses(tabelaDoses, doses)
 

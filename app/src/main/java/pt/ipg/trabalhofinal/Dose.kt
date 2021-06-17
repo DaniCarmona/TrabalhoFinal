@@ -4,7 +4,7 @@ import android.content.ContentValues
 import android.database.Cursor
 import android.provider.BaseColumns
 
-data class Doses (var id: Long = -1, var data: Int, var dose: Int, var idUtente: Long, var idVacina: Long) {
+data class Dose (var id: Long = -1, var data: Int, var dose: Int, var idUtente: Long, var idVacina: Long){
     fun toContentValues(): ContentValues {
         val valores = ContentValues().apply {
             put(TabelaDoses.CAMPO_DATA_ADMINISTRACAO, data)
@@ -17,7 +17,7 @@ data class Doses (var id: Long = -1, var data: Int, var dose: Int, var idUtente:
     }
 
     companion object {
-        fun fromCursor(cursor: Cursor): Doses {
+        fun fromCursor(cursor: Cursor): Dose {
             val colId = cursor.getColumnIndex(BaseColumns._ID)
             val colData = cursor.getColumnIndex(TabelaDoses.CAMPO_DATA_ADMINISTRACAO)
             val colDose = cursor.getColumnIndex(TabelaDoses.CAMPO_DOSE)
@@ -30,7 +30,7 @@ data class Doses (var id: Long = -1, var data: Int, var dose: Int, var idUtente:
             val idUtente = cursor.getLong(colIdUtente)
             val idVacina = cursor.getLong(colIdVacina)
 
-            return Doses(id, data, dose, idUtente, idVacina)
+            return Dose(id, data, dose, idUtente, idVacina)
         }
     }
 }

@@ -7,7 +7,7 @@ import android.database.Cursor
 import android.net.Uri
 import android.provider.BaseColumns
 
-class ContentProviderLivros : ContentProvider(){
+class ContentProviderArmazemVacinas : ContentProvider(){
     private var bdArmazemVacinasOpenHelper : BdArmazemVacinasOpenHelper? = null
 
     override fun onCreate(): Boolean {
