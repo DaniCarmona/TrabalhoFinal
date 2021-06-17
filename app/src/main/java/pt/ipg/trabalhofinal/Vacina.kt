@@ -20,15 +20,15 @@ data class Vacina (var id: Long = -1, var nomeVacina: String, var stock: Int, va
         fun fromCursor(cursor: Cursor): Vacina {
             val colId = cursor.getColumnIndex(BaseColumns._ID)
             val colStock = cursor.getColumnIndex(TabelaVacinas.CAMPO_STOCK)
-            val colFornecedor = cursor.getColumnIndex(TabelaVacinas.CAMPO_NOME_VACINA)
+            val colNomeVacina = cursor.getColumnIndex(TabelaVacinas.CAMPO_NOME_VACINA)
             val colEmail = cursor.getColumnIndex(TabelaVacinas.CAMPO_EMAIL_FORNECEDOR)
 
             val id = cursor.getLong(colId)
             val stock = cursor.getInt(colStock)
-            val fornecedor = cursor.getString(colFornecedor)
+            val nomeVacina = cursor.getString(colNomeVacina)
             val email = cursor.getString(colEmail)
 
-            return Vacina(id, fornecedor, stock, email)
+            return Vacina(id, nomeVacina, stock, email)
         }
     }
 }
