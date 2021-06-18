@@ -40,10 +40,10 @@ class ListaUtentesFragment : Fragment(), LoaderManager.LoaderCallbacks<Cursor> {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val recyclerViewLivros = view.findViewById<RecyclerView>(R.id.recyclerViewUtentes)
+        val recyclerViewUtentes = view.findViewById<RecyclerView>(R.id.recyclerViewUtentes)
         adapterUtentes = AdapterUtentes(this)
-        recyclerViewLivros.adapter = adapterUtentes
-        recyclerViewLivros.layoutManager = LinearLayoutManager(requireContext())
+        recyclerViewUtentes.adapter = adapterUtentes
+        recyclerViewUtentes.layoutManager = LinearLayoutManager(requireContext())
 
         LoaderManager.getInstance(this)
             .initLoader(ID_LOADER_MANAGER_UTENTES, null, this)

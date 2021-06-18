@@ -30,7 +30,7 @@ class ContentProviderArmazemVacinas : ContentProvider(){
             URI_VACINAS -> TabelaVacinas(bd).query(
                     projection as Array<String>,
                     selection,
-                    selectionArgs as Array<String>,
+                    selectionArgs as Array<String>?,
                     null,
                     null,
                     sortOrder
@@ -46,7 +46,7 @@ class ContentProviderArmazemVacinas : ContentProvider(){
             URI_UTENTES -> TabelaUtentes(bd).query(
                     projection as Array<String>,
                     selection,
-                    selectionArgs as Array<String>,
+                    selectionArgs as Array<String>?,
                     null,
                     null,
                     sortOrder
@@ -62,7 +62,7 @@ class ContentProviderArmazemVacinas : ContentProvider(){
             URI_DOSES -> TabelaDoses(bd).query(
                     projection as Array<String>,
                     selection,
-                    selectionArgs as Array<String>,
+                    selectionArgs as Array<String>?,
                     null,
                     null,
                     sortOrder

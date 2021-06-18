@@ -90,7 +90,7 @@ class TesteBaseDados {
 
     @Before
     fun apagaBaseDados() {
-        getAppContext().deleteDatabase(BdArmazemVacinasOpenHelper.NOME_BASE_DADOS)
+       // getAppContext().deleteDatabase(BdArmazemVacinasOpenHelper.NOME_BASE_DADOS)
     }
 
     @Test

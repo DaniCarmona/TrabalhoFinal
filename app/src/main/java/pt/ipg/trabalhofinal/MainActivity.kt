@@ -53,7 +53,7 @@ class MainActivity : AppCompatActivity() {
         return when (item.itemId) {
             R.id.action_settings -> true
             else -> {
-                if (DadosApp.listaUtentesFragment.processaOpcaoMenu(item)) {
+                if(DadosApp.listaUtentesFragment != null && DadosApp.listaUtentesFragment!!.processaOpcaoMenu(item)) {
                     return true
                 } else {
                     return super.onOptionsItemSelected(item)
