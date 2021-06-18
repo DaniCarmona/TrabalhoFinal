@@ -3,15 +3,16 @@ package pt.ipg.trabalhofinal
 import android.content.ContentValues
 import android.database.Cursor
 import android.provider.BaseColumns
+import java.util.*
 
-data class Utente (var id: Long = -1, var nome: String, var telefone: String, var email: String, var morada: String, var dataNascimento: Int, var dose: Int) {
+data class Utente(var id: Long = -1, var nome: String, var telefone: String, var email: String, var morada: String, var dataNascimento: Date, var dose: Int) {
     fun toContentValues(): ContentValues {
         val valores = ContentValues().apply {
             put(TabelaUtentes.CAMPO_NOME, nome)
             put(TabelaUtentes.CAMPO_TELEFONE, telefone)
             put(TabelaUtentes.CAMPO_EMAIL, email)
             put(TabelaUtentes.CAMPO_MORADA, morada)
-            put(TabelaUtentes.CAMPO_DATA_NASCIMENTO, dataNascimento)
+            put(TabelaUtentes.CAMPO_DATA_NASCIMENTO, dataNascimento.time)
             put(TabelaUtentes.CAMPO_DOSE, dose)
         }
 
@@ -33,10 +34,10 @@ data class Utente (var id: Long = -1, var nome: String, var telefone: String, va
             val telefone = cursor.getString(colTelefone)
             val email = cursor.getString(colEmail)
             val morada = cursor.getString(colMorada)
-            val dataNascimento = cursor.getInt(colDataNascimento)
+            val dataNascimento = cursor.getLong(colDataNascimento)
             val dose = cursor.getInt(colDose)
 
-            return Utente(id, nome, telefone, email, morada, dataNascimento, dose)
+            return Utente(id, nome, telefone, email, morada, Date(dataNascimento), dose)
         }
     }
 }

@@ -10,6 +10,8 @@ import org.junit.runner.RunWith
 
 import org.junit.Assert.*
 import org.junit.Before
+import java.util.*
+
 
 /**
  * Instrumented test, which will execute on an Android device.
@@ -176,7 +178,7 @@ class TesteBaseDados {
     fun consegueInserirUtentes(){
         val db = getBdArmazemVacinasOpenHelper().writableDatabase
         val tabelaUtente = getTabelaUtentes(db)
-        val utente = Utente(nome="Aníbal Almeida", telefone = "+355 932978568",email = "almeida@gmail.com", morada = "Rua Vila de Trancoso, Guarda", dataNascimento = 27051970, dose = 2)
+        val utente = Utente(nome ="Aníbal Almeida", telefone = "+355 932978568", email = "almeida@gmail.com", morada = "Rua Vila de Trancoso, Guarda", dataNascimento = Date(1999-1900, 5,26), dose = 2)
 
         utente.id = insereUtente(tabelaUtente, utente)
         val utenteBD = getUtenteBD(tabelaUtente, utente.id)
@@ -188,7 +190,7 @@ class TesteBaseDados {
     fun consegueAlterarUtentes(){
         val db = getBdArmazemVacinasOpenHelper().writableDatabase
         val tabelaUtentes = getTabelaUtentes(db)
-        val utente = Utente(nome="?", telefone = "?",email = "?", morada = "?", dataNascimento = 0, dose = 0)
+        val utente = Utente(nome ="?", telefone = "?", email = "?", morada = "?", dataNascimento = 0, dose = 0)
 
         utente.id = insereUtente(tabelaUtentes, utente)
         utente.nome="Amilcar Sousa"
@@ -212,7 +214,7 @@ class TesteBaseDados {
     fun consegueApagarUtentes(){
         val db = getBdArmazemVacinasOpenHelper().writableDatabase
         val tabelaUtentes = getTabelaUtentes(db)
-        val utente = Utente(nome="?", telefone = "?",email = "?", morada = "?", dataNascimento = 0, dose = 0)
+        val utente = Utente(nome ="?", telefone = "?", email = "?", morada = "?", dataNascimento = 0, dose = 0)
 
         utente.id = insereUtente(tabelaUtentes, utente)
 
@@ -230,7 +232,7 @@ class TesteBaseDados {
     fun consegueLerUtentes(){
         val db = getBdArmazemVacinasOpenHelper().writableDatabase
         val tabelaUtentes = getTabelaUtentes(db)
-        val utente = Utente(nome="David Gonçalves", telefone = "+355 914369458",email = "dg@outlook.com", morada = "Rua dos Pinheiros, Braga", dataNascimento = 4011980, dose = 2)
+        val utente = Utente(nome ="David Gonçalves", telefone = "+355 914369458", email = "dg@outlook.com", morada = "Rua dos Pinheiros, Braga", dataNascimento = 4011980, dose = 2)
 
         utente.id = insereUtente(tabelaUtentes, utente)
 
@@ -244,7 +246,7 @@ class TesteBaseDados {
     fun consegueInserirDoses(){
         val db = getBdArmazemVacinasOpenHelper().writableDatabase
         val tabelaUtente = getTabelaUtentes(db)
-        val utente = Utente(nome="Aníba Almeida", telefone = "+355 962978568",email = "almeda@gmail.com", morada = "Rua Vila de Trancso, Guarda", dataNascimento = 27061970, dose = 1)
+        val utente = Utente(nome ="Aníba Almeida", telefone = "+355 962978568", email = "almeda@gmail.com", morada = "Rua Vila de Trancso, Guarda", dataNascimento = 27061970, dose = 1)
 
         utente.id = insereUtente(tabelaUtente, utente)
 
@@ -269,7 +271,7 @@ class TesteBaseDados {
     fun consegueAlterarDoses(){
         val db = getBdArmazemVacinasOpenHelper().writableDatabase
         val tabelaUtente = getTabelaUtentes(db)
-        val utente = Utente(nome="Daniel Martins", telefone = "+355 962978568",email = "martins@gmail.com", morada = "Rua Vila de Trancso, Guarda", dataNascimento = 27061970, dose = 1)
+        val utente = Utente(nome ="Daniel Martins", telefone = "+355 962978568", email = "martins@gmail.com", morada = "Rua Vila de Trancso, Guarda", dataNascimento = 27061970, dose = 1)
 
         utente.id = insereUtente(tabelaUtente, utente)
 
@@ -299,7 +301,7 @@ class TesteBaseDados {
     fun consegueApagarDoses(){
         val db = getBdArmazemVacinasOpenHelper().writableDatabase
         val tabelaUtente = getTabelaUtentes(db)
-        val utente = Utente(nome="Aníba Almeida", telefone = "+355 962978568",email = "almeda@gmail.com", morada = "Rua Vila de Trancso, Guarda", dataNascimento = 27061970, dose = 1)
+        val utente = Utente(nome ="Aníba Almeida", telefone = "+355 962978568", email = "almeda@gmail.com", morada = "Rua Vila de Trancso, Guarda", dataNascimento = 27061970, dose = 1)
 
         utente.id = insereUtente(tabelaUtente, utente)
 
@@ -331,7 +333,7 @@ class TesteBaseDados {
     fun consegueLerDoses(){
         val db = getBdArmazemVacinasOpenHelper().writableDatabase
         val tabelaUtente = getTabelaUtentes(db)
-        val utente = Utente(nome="Manuel Pereira", telefone = "+355 962978568",email = "almeda@gmail.com", morada = "Rua Sofia, Coimbra", dataNascimento = 15121980, dose = 2)
+        val utente = Utente(nome ="Manuel Pereira", telefone = "+355 962978568", email = "almeda@gmail.com", morada = "Rua Sofia, Coimbra", dataNascimento = 15121980, dose = 2)
 
         utente.id = insereUtente(tabelaUtente, utente)
 
