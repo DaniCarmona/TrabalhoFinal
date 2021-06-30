@@ -190,14 +190,14 @@ class TesteBaseDados {
     fun consegueAlterarUtentes(){
         val db = getBdArmazemVacinasOpenHelper().writableDatabase
         val tabelaUtentes = getTabelaUtentes(db)
-        val utente = Utente(nome ="?", telefone = "?", email = "?", morada = "?", dataNascimento = 0, dose = 0)
+        val utente = Utente(nome ="?", telefone = "?", email = "?", morada = "?", dataNascimento = Date(1999-1900, 5,26), dose = 0)
 
         utente.id = insereUtente(tabelaUtentes, utente)
         utente.nome="Amilcar Sousa"
         utente.telefone="+355 965734894"
         utente.email="asousa@hotmai.com"
         utente.morada="Rua da Fonte, Viseu"
-        utente.dataNascimento=31061975
+        utente.dataNascimento=Date(1975-1900, 6,31)
         utente.dose=1
         val registosAlterados = tabelaUtentes.update(
             utente.toContentValues(),
@@ -214,7 +214,7 @@ class TesteBaseDados {
     fun consegueApagarUtentes(){
         val db = getBdArmazemVacinasOpenHelper().writableDatabase
         val tabelaUtentes = getTabelaUtentes(db)
-        val utente = Utente(nome ="?", telefone = "?", email = "?", morada = "?", dataNascimento = 0, dose = 0)
+        val utente = Utente(nome ="?", telefone = "?", email = "?", morada = "?", dataNascimento = Date(1975-1900, 6,31) , dose = 0)
 
         utente.id = insereUtente(tabelaUtentes, utente)
 
@@ -232,7 +232,7 @@ class TesteBaseDados {
     fun consegueLerUtentes(){
         val db = getBdArmazemVacinasOpenHelper().writableDatabase
         val tabelaUtentes = getTabelaUtentes(db)
-        val utente = Utente(nome ="David Gonçalves", telefone = "+355 914369458", email = "dg@outlook.com", morada = "Rua dos Pinheiros, Braga", dataNascimento = 4011980, dose = 2)
+        val utente = Utente(nome ="David Gonçalves", telefone = "+355 914369458", email = "dg@outlook.com", morada = "Rua dos Pinheiros, Braga", dataNascimento = Date(1980-1900, 1,4) , dose = 2)
 
         utente.id = insereUtente(tabelaUtentes, utente)
 
@@ -246,7 +246,7 @@ class TesteBaseDados {
     fun consegueInserirDoses(){
         val db = getBdArmazemVacinasOpenHelper().writableDatabase
         val tabelaUtente = getTabelaUtentes(db)
-        val utente = Utente(nome ="Aníba Almeida", telefone = "+355 962978568", email = "almeda@gmail.com", morada = "Rua Vila de Trancso, Guarda", dataNascimento = 27061970, dose = 1)
+        val utente = Utente(nome ="Aníba Almeida", telefone = "+355 962978568", email = "almeda@gmail.com", morada = "Rua Vila de Trancso, Guarda", dataNascimento = Date(1981-1900, 5,6) , dose = 1)
 
         utente.id = insereUtente(tabelaUtente, utente)
 
@@ -257,7 +257,7 @@ class TesteBaseDados {
 
 
         val tabelaDoses = getTabelaDoses(db)
-        val doses = Dose(data = 25052021, dose = 1, idUtente = utente.id, idVacina = vacina.id)
+        val doses = Dose(data = Date(2021-1900, 5,25) , dose = 1, idUtente = utente.id, idVacina = vacina.id)
 
         doses.id = insereDoses(tabelaDoses, doses)
 
@@ -271,7 +271,7 @@ class TesteBaseDados {
     fun consegueAlterarDoses(){
         val db = getBdArmazemVacinasOpenHelper().writableDatabase
         val tabelaUtente = getTabelaUtentes(db)
-        val utente = Utente(nome ="Daniel Martins", telefone = "+355 962978568", email = "martins@gmail.com", morada = "Rua Vila de Trancso, Guarda", dataNascimento = 27061970, dose = 1)
+        val utente = Utente(nome ="Daniel Martins", telefone = "+355 962978568", email = "martins@gmail.com", morada = "Rua Vila de Trancso, Guarda", dataNascimento = Date(1970-1900, 6,27) , dose = 1)
 
         utente.id = insereUtente(tabelaUtente, utente)
 
@@ -282,9 +282,12 @@ class TesteBaseDados {
 
 
         val tabelaDoses = getTabelaDoses(db)
-        val doses = Dose(data = 0, dose = 0, idUtente = utente.id, idVacina = vacina.id)
+        val doses = Dose(data = Date(1975-1900, 6,31) , dose = 0, idUtente = utente.id, idVacina = vacina.id)
 
         doses.id = insereDoses(tabelaDoses, doses)
+
+        doses.data = Date(2021-1900, 6,25)
+        doses.dose= 1
 
         val registosAlterados = tabelaDoses.update(
                 doses.toContentValues(),
@@ -301,7 +304,7 @@ class TesteBaseDados {
     fun consegueApagarDoses(){
         val db = getBdArmazemVacinasOpenHelper().writableDatabase
         val tabelaUtente = getTabelaUtentes(db)
-        val utente = Utente(nome ="Aníba Almeida", telefone = "+355 962978568", email = "almeda@gmail.com", morada = "Rua Vila de Trancso, Guarda", dataNascimento = 27061970, dose = 1)
+        val utente = Utente(nome ="Aníba Almeida", telefone = "+355 962978568", email = "almeda@gmail.com", morada = "Rua Vila de Trancso, Guarda", dataNascimento = Date(1989-1900, 7,31) , dose = 1)
 
         utente.id = insereUtente(tabelaUtente, utente)
 
@@ -312,12 +315,11 @@ class TesteBaseDados {
 
 
         val tabelaDoses = getTabelaDoses(db)
-        val doses = Dose(data = 0, dose = 0, idUtente = utente.id, idVacina = vacina.id)
+        val doses = Dose(data = Date(1975-1900, 6,31) , dose = 0, idUtente = utente.id, idVacina = vacina.id)
 
         doses.id = insereDoses(tabelaDoses, doses)
 
-        doses.data = 31052021
-        doses.dose= 1
+
 
         val registosEliminados =tabelaDoses.delete(
                 "${BaseColumns._ID}=?",
@@ -333,7 +335,7 @@ class TesteBaseDados {
     fun consegueLerDoses(){
         val db = getBdArmazemVacinasOpenHelper().writableDatabase
         val tabelaUtente = getTabelaUtentes(db)
-        val utente = Utente(nome ="Manuel Pereira", telefone = "+355 962978568", email = "almeda@gmail.com", morada = "Rua Sofia, Coimbra", dataNascimento = 15121980, dose = 2)
+        val utente = Utente(nome ="Manuel Pereira", telefone = "+355 962978568", email = "almeda@gmail.com", morada = "Rua Sofia, Coimbra", dataNascimento = Date(1975-1900, 6,31), dose = 2)
 
         utente.id = insereUtente(tabelaUtente, utente)
 
@@ -344,7 +346,7 @@ class TesteBaseDados {
 
 
         val tabelaDoses = getTabelaDoses(db)
-        val doses = Dose(data = 1062021, dose = 2, idUtente = utente.id, idVacina = vacina.id)
+        val doses = Dose(data = Date(2021-1900, 6,10), dose = 2, idUtente = utente.id, idVacina = vacina.id)
 
         doses.id = insereDoses(tabelaDoses, doses)
 

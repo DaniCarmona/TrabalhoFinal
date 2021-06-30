@@ -5,6 +5,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import java.util.*
 
 
 class AdapterUtentes(val fragment: ListaUtentesFragment) : RecyclerView.Adapter<AdapterUtentes.ViewHolderUtente>() {
@@ -20,7 +21,7 @@ class AdapterUtentes(val fragment: ListaUtentesFragment) : RecyclerView.Adapter<
         private val textViewDose = itemView.findViewById<TextView>(R.id.textViewDose)
         private val textViewIdade = itemView.findViewById<TextView>(R.id.textViewIdade)
         private val textViewTelefone = itemView.findViewById<TextView>(R.id.textViewTelefone)
-
+        private val data = Calendar.getInstance()
         private lateinit var utente: Utente
 
         init {
@@ -30,13 +31,13 @@ class AdapterUtentes(val fragment: ListaUtentesFragment) : RecyclerView.Adapter<
         fun atualizaUtente(utente: Utente) {
             this.utente = utente
             val dose = utente.dose.toString()
-           // val idade =  utente.dataNascimento
+            val idade =  calculaIdade(utente.dataNascimento)
             val telefone = utente.telefone
+
 
             textViewNome.text = utente.nome
             textViewDose.text = "Dose: $dose"
-            //textViewIdade.text = "Idade: $idade"
-            textViewIdade.text = "Idade: 00"//temporario
+            textViewIdade.text = "Idade: $idade"
             textViewTelefone.text = "Telefone: $telefone"
         }
 
@@ -60,6 +61,23 @@ class AdapterUtentes(val fragment: ListaUtentesFragment) : RecyclerView.Adapter<
         private fun desSeleciona() {
             selecionado = null
             itemView.setBackgroundResource(android.R.color.white)
+        }
+
+        fun calculaIdade( dataNacimento: Date): Int{
+            val idade:Int
+            if((data.get(Calendar.MONTH)+1) > dataNacimento.month){
+                 idade = data.get(Calendar.YEAR) - (dataNacimento.year+1900)
+            }else if((data.get(Calendar.MONTH)+1) < dataNacimento.month){
+                 idade = data.get(Calendar.YEAR) - (dataNacimento.year+1900) -1
+            }else {
+                if((data.get(Calendar.DATE)) >= dataNacimento.day){
+                    idade = data.get(Calendar.YEAR) - (dataNacimento.year+1900)
+                }else{
+                    idade = data.get(Calendar.YEAR) - (dataNacimento.year+1900)-1
+                }
+            }
+
+            return idade
         }
 
         companion object {
