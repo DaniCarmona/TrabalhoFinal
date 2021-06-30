@@ -72,5 +72,7 @@ class MainActivity : AppCompatActivity() {
         menu.findItem(R.id.action_editar_utente).setVisible(mostraBotoesUtente)
         menu.findItem(R.id.action_nova_dose).setVisible(mostraBotoesUtente)
         menu.findItem(R.id.action_ver_doses_utente).setVisible(mostraBotoesUtente)
+        menu.findItem(R.id.action_apagar_utente).setVisible(mostraBotoesUtente)
+        menu.findItem(R.id.action_ver_dados_utente).setVisible(mostraBotoesUtente)
     }
 }
