@@ -10,7 +10,6 @@ import android.view.ViewGroup
 import androidx.loader.app.LoaderManager
 import androidx.loader.content.CursorLoader
 import androidx.loader.content.Loader
-import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import pt.ipg.trabalhofinal.databinding.FragmentListaUtentesBinding
@@ -66,11 +65,11 @@ class ListaUtentesFragment : Fragment(), LoaderManager.LoaderCallbacks<Cursor> {
         //todo: navegar para o fragmento para ver as doses do utente
     }
 
-    fun navegaVerTodasDoses() {
+    fun navegaVerDadosUtente() {
         //todo: navegar para o fragmento para ver todas as doses
     }
 
-    fun navegaVerStockVacinas() {
+    fun navegaApagarUtente() {
         //todo: navegar para o fragmento para ver o sotck de vacinas
     }
 
@@ -80,8 +79,8 @@ class ListaUtentesFragment : Fragment(), LoaderManager.LoaderCallbacks<Cursor> {
             R.id.action_editar_utente -> navegaEditarUtente()
             R.id.action_nova_dose -> navegaNovaDose()
             R.id.action_ver_doses_utente -> navegaVerDosesUtente()
-            R.id.action_ver_todas_doses -> navegaVerTodasDoses()
-            R.id.action_ver_stock_vacinas -> navegaVerStockVacinas()
+            R.id.action_ver_dados_utente -> navegaVerDadosUtente()
+            R.id.action_apagar_utente -> navegaApagarUtente()
             else -> return false
         }
 
