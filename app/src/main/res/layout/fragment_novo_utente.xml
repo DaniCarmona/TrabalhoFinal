@@ -5,33 +5,77 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".NovoUtenteFargment" >
+    tools:context=".NovoUtenteFragment" >
 
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_margin="">
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margem_ecra">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/editTextTitulo"
+            android:id="@+id/editTextNome"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint=""
-            android:inputType="textLongMessage|textAutoComplete" />
+            android:hint="@string/nome"
+            android:inputType="textLongMessage|textPersonName|textAutoComplete" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:hint="@string/telefone">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/editTextAutor"
+                android:id="@+id/editTextTelefone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/margem_campos"
                 android:hint=""
-                android:inputType="textPersonName" />
+                android:inputType="phone" />
 
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="@string/email">
 
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/editTextEmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margem_campos"
+                    android:hint=""
+                    android:inputType="textEmailAddress" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:hint="@string/morada">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/editTextMorada"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margem_campos"
+                        android:hint=""
+                        android:inputType="textPostalAddress" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:hint="@string/data_nascimento">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/editTextDataNascimento"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/margem_campos"
+                            android:hint=""
+                            android:inputType="datetime" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+                </com.google.android.material.textfield.TextInputLayout>
+            </com.google.android.material.textfield.TextInputLayout>
+        </com.google.android.material.textfield.TextInputLayout>
 
     </com.google.android.material.textfield.TextInputLayout>
+
 </LinearLayout>

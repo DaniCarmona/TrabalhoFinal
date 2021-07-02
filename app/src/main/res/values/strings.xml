@@ -13,4 +13,9 @@
     <string name="ver_doses_do_utente">Ver Doses do Utente</string>
     <string name="ver_dados_utentes">Ver os Dados do Utente</string>
     <string name="apagar_o_utente">Apagar o Utente</string>
+    <string name="nome">Nome</string>
+    <string name="telefone">Telefone</string>
+    <string name="email">Email</string>
+    <string name="morada">Morada</string>
+    <string name="data_nascimento">Data de Nascimento</string>
 </resources>
