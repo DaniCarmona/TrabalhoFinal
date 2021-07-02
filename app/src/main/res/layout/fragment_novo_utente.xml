@@ -63,45 +63,56 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/margem_campos"
-                        android:text="Data de Nacimento" />
+                        android:text="@string/data_de_nacimento" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:orientation="horizontal">
+                        android:orientation="horizontal"
+                        android:baselineAligned="false">
 
                         <com.google.android.material.textfield.TextInputLayout
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
+                            android:layout_marginTop="@dimen/margem_ecra"
+                            android:layout_marginEnd="@dimen/margem_ecra"
+                            android:layout_marginRight="@dimen/margem_ecra"
+                            android:layout_marginBottom="@dimen/margem_ecra"
                             android:layout_weight="1">
 
                             <com.google.android.material.textfield.TextInputEditText
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:hint="hint" />
+                                android:hint="@string/dia" />
                         </com.google.android.material.textfield.TextInputLayout>
 
                         <com.google.android.material.textfield.TextInputLayout
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
+                            android:layout_marginTop="@dimen/margem_ecra"
+                            android:layout_marginBottom="@dimen/margem_ecra"
                             android:layout_weight="1">
 
                             <com.google.android.material.textfield.TextInputEditText
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:hint="hint" />
+                                android:hint="@string/mes" />
 
                         </com.google.android.material.textfield.TextInputLayout>
 
                         <com.google.android.material.textfield.TextInputLayout
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
-                            android:layout_weight="1">
+                            android:layout_marginStart="@dimen/margem_ecra"
+                            android:layout_marginLeft="@dimen/margem_ecra"
+                            android:layout_marginTop="@dimen/margem_ecra"
+                            android:layout_marginBottom="@dimen/margem_ecra"
+                            android:layout_weight="3">
 
                             <com.google.android.material.textfield.TextInputEditText
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:hint="hint" />
+                                android:hint="@string/ano" />
 
                         </com.google.android.material.textfield.TextInputLayout>
                     </LinearLayout>

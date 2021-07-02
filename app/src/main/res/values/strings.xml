@@ -28,4 +28,8 @@
     <string name="preencha_data_nascimento">Preencha a data de nascimento</string>
     <string name="erro_inserir_utente">Erro ao inserir utente</string>
     <string name="utente_guardado_sucesso">Utente guardado com sucesso</string>
+    <string name="data_de_nacimento">Data de Nacimento</string>
+    <string name="dia">Dia</string>
+    <string name="ano">Ano</string>
+    <string name="mes">Mês</string>
 </resources>

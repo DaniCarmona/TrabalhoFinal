@@ -50,7 +50,7 @@ class NovoUtenteFragment : Fragment(){
         editTextTelefone = view.findViewById(R.id.editTextTelefone)
         editTextEmail = view.findViewById(R.id.editTextEmail)
         editTextMorada = view.findViewById(R.id.editTextMorada)
-        editTextDataNascimento = view.findViewById(R.id.editTextDataNascimento)
+       // editTextDataNascimento = view.findViewById(R.id.editTextDataNascimento)
 
     }
 
@@ -93,30 +93,30 @@ class NovoUtenteFragment : Fragment(){
         }
 
         val dataNascimento = editTextNome
-        if (dataNascimento.isEmpty()) {
+        /*if (dataNascimento.isEmpty()) {
             editTextDataNascimento.setError(getString(R.string.preencha_data_nascimento))
             editTextDataNascimento.requestFocus()
             return
-        }
+        }*/
 
 
 
 
-        val utente = Utente(nome = nome, telefone = telefone, email = email, morada = morada, dataNascimento = Date(dataNascimento), dose = 0)
+      /*  val utente = Utente(nome = nome, telefone = telefone, email = email, morada = morada, dataNascimento = Date(dataNascimento), dose = 0)
 
         val uri = activity?.contentResolver?.insert(
             ContentProviderArmazemVacinas.ENDERECO_UTENTES,
             utente.toContentValues()
-        )
+        )*/
 
-        if (uri == null) {
+        /*if (uri == null) {
             Snackbar.make(
                 editTextNome,
                 getString(R.string.erro_inserir_utente),
                 Snackbar.LENGTH_LONG
             ).show()
             return
-        }
+        }*/
 
         Toast.makeText(
             requireContext(),

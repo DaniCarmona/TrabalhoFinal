@@ -32,6 +32,7 @@ class ListaUtentesFragment : Fragment(), LoaderManager.LoaderCallbacks<Cursor> {
         savedInstanceState: Bundle?
     ): View? {
         DadosApp.fragment = this
+        (activity as MainActivity).menuAtual = R.menu.menu_lista_utentes
 
         _binding = FragmentListaUtentesBinding.inflate(inflater, container, false)
         return binding.root

@@ -36,11 +36,6 @@ class MainActivity : AppCompatActivity() {
         appBarConfiguration = AppBarConfiguration(navController.graph)
         setupActionBarWithNavController(navController, appBarConfiguration)
 
-        binding.fab.setOnClickListener { view ->
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                .setAction("Action", null).show()
-        }
-
         DadosApp.activity = this
     }
 
@@ -48,7 +43,8 @@ class MainActivity : AppCompatActivity() {
         // Inflate the menu; this adds items to the action bar if it is present.
         menuInflater.inflate(menuAtual, menu)
         this.menu = menu
-        if(menuAtual== R.menu.menu_lista_utentes) {
+
+        if(menuAtual == R.menu.menu_lista_utentes) {
             atualizaMenuListaUtentes(false)
         }
         return true
