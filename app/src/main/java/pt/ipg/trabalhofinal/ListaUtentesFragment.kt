@@ -13,6 +13,7 @@ import androidx.loader.content.Loader
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import pt.ipg.trabalhofinal.databinding.FragmentListaUtentesBinding
+import androidx.navigation.fragment.findNavController
 
 /**
  * A simple [Fragment] subclass as the default destination in the navigation.
@@ -30,7 +31,7 @@ class ListaUtentesFragment : Fragment(), LoaderManager.LoaderCallbacks<Cursor> {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        DadosApp.listaUtentesFragment = this
+        DadosApp.fragment = this
 
         _binding = FragmentListaUtentesBinding.inflate(inflater, container, false)
         return binding.root
@@ -49,8 +50,8 @@ class ListaUtentesFragment : Fragment(), LoaderManager.LoaderCallbacks<Cursor> {
     }
 
     fun navegaNovoUtente() {
-        //findNavController().navigate(R.id.action_ListaLivrosFragment_to_NovoLivroFragment)
-        //todo: navegar para o fragmento de novo utente
+        findNavController().navigate(R.id.action_ListaUtentesFragment_to_NovoUtenteFragment)
+
     }
 
     fun navegaEditarUtente() {

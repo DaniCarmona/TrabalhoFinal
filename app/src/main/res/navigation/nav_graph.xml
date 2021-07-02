@@ -12,17 +12,17 @@
         tools:layout="@layout/fragment_lista_utentes">
 
         <action
-            android:id="@+id/action_FirstFragment_to_SecondFragment"
-            app:destination="@id/NovoLivroFragment" />
+            android:id="@+id/action_ListaUtentesFragment_to_NovoUtenteFragment"
+            app:destination="@id/NovoUtenteFragment" />
     </fragment>
     <fragment
-        android:id="@+id/NovoLivroFragment"
+        android:id="@+id/NovoUtenteFragment"
         android:name="pt.ipg.trabalhofinal.NovoUtenteFragment"
         android:label="@string/novo_utente_fragment_label"
         tools:layout="@layout/fragment_novo_utente">
 
         <action
-            android:id="@+id/action_SecondFragment_to_FirstFragment"
+            android:id="@+id/action_NovoUtenteFragment_to_ListaUtentesFragment"
             app:destination="@id/ListaUtentesFragment" />
     </fragment>
 </navigation>

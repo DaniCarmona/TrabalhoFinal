@@ -18,4 +18,14 @@
     <string name="email">Email</string>
     <string name="morada">Morada</string>
     <string name="data_nascimento">Data de Nascimento</string>
+    <string name="versao">Livros v. 1.0</string>
+    <string name="guardar">Guardar</string>
+    <string name="cancelar">Cancelar</string>
+    <string name="preencha_nome">Preencha o título</string>
+    <string name="preencha_telefone">Preencha o telefone</string>
+    <string name="preencha_email">Preencha o email</string>
+    <string name="preencha_morada">Preencha a morada</string>
+    <string name="preencha_data_nascimento">Preencha a data de nascimento</string>
+    <string name="erro_inserir_utente">Erro ao inserir utente</string>
+    <string name="utente_guardado_sucesso">Utente guardado com sucesso</string>
 </resources>

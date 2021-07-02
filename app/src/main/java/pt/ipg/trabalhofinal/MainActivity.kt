@@ -9,6 +9,7 @@ import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.Toast
 import pt.ipg.trabalhofinal.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -16,6 +17,12 @@ class MainActivity : AppCompatActivity() {
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityMainBinding
     private lateinit var menu: Menu
+
+    var menuAtual = R.menu.menu_lista_utentes
+        set(value) {
+            field = value
+            invalidateOptionsMenu()
+        }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,10 +46,11 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         // Inflate the menu; this adds items to the action bar if it is present.
-        menuInflater.inflate(R.menu.menu_lista_utentes, menu)
+        menuInflater.inflate(menuAtual, menu)
         this.menu = menu
-        atualizaMenuListaUtentes(false)
-
+        if(menuAtual== R.menu.menu_lista_utentes) {
+            atualizaMenuListaUtentes(false)
+        }
         return true
     }
 
@@ -50,16 +58,21 @@ class MainActivity : AppCompatActivity() {
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
-        return when (item.itemId) {
-            R.id.action_settings -> true
-            else -> {
-                if(DadosApp.listaUtentesFragment != null && DadosApp.listaUtentesFragment!!.processaOpcaoMenu(item)) {
-                    return true
-                } else {
-                    return super.onOptionsItemSelected(item)
-                }
+        val opcaoProcessada = when (item.itemId) {
+            R.id.action_settings -> {
+                Toast.makeText(this, R.string.versao, Toast.LENGTH_LONG).show()
+                true
+            }
+
+            else -> when(menuAtual) {
+                R.menu.menu_lista_utentes -> (DadosApp.fragment as ListaUtentesFragment).processaOpcaoMenu(item)
+                R.menu.menu_novo_utente -> (DadosApp.fragment as NovoUtenteFragment).processaOpcaoMenu(item)
+                //R.menu.menu_edita_utente -> (DadosApp.fragment as EditaLivroFragment).processaOpcaoMenu(item)
+                //R.menu.menu_elimina_utente -> (DadosApp.fragment as EliminaLivroFragment).processaOpcaoMenu(item)
+                else -> false
             }
         }
+        return if(opcaoProcessada) true else super.onOptionsItemSelected(item)
     }
 
     override fun onSupportNavigateUp(): Boolean {
