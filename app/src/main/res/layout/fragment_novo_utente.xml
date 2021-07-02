@@ -81,9 +81,11 @@
                             android:layout_weight="1">
 
                             <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/editTextDiaNascimento"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:hint="@string/dia" />
+                                android:hint="@string/dia"
+                                android:inputType="number" />
                         </com.google.android.material.textfield.TextInputLayout>
 
                         <com.google.android.material.textfield.TextInputLayout
@@ -94,9 +96,11 @@
                             android:layout_weight="1">
 
                             <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/editTextMesNascimento"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:hint="@string/mes" />
+                                android:hint="@string/mes"
+                                android:inputType="number" />
 
                         </com.google.android.material.textfield.TextInputLayout>
 
@@ -110,9 +114,11 @@
                             android:layout_weight="3">
 
                             <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/editTextAnoNascimento"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:hint="@string/ano" />
+                                android:hint="@string/ano"
+                                android:inputType="number" />
 
                         </com.google.android.material.textfield.TextInputLayout>
                     </LinearLayout>
