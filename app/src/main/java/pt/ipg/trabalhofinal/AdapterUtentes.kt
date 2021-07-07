@@ -35,9 +35,12 @@ class AdapterUtentes(val fragment: ListaUtentesFragment) : RecyclerView.Adapter<
             val telefone = utente.telefone
 
             textViewNome.text = utente.nome
-            textViewDose.text = "Dose: $dose"
-            textViewIdade.text = "Idade: $idade"
-            textViewTelefone.text = "Telefone: $telefone"
+            val doseString = "Dose: $dose"
+            textViewDose.text = doseString
+            val idadeString = "Idade: $idade"
+            textViewIdade.text = idadeString
+            val telefoneString = "Telefone: $telefone"
+            textViewTelefone.text = telefoneString
         }
 
         /**
