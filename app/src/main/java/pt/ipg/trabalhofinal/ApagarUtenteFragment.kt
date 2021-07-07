@@ -48,11 +48,11 @@ class ApagarUtenteFragment : Fragment(){
 
         val utente = DadosApp.utenteSelecionado!!
         textViewNome.setText(utente.nome)
-        textViewDoses.setText(utente.dose)
+        textViewDoses.setText(utente.dose.toString())
         textViewTelefone.setText(utente.telefone)
         textViewEmail.setText(utente.email)
         textViewMorada.setText(utente.morada)
-        textViewDataNascimento.setText("${utente.dataNascimento.day}/${utente.dataNascimento.month}/${utente.dataNascimento.year+1900}")
+        textViewDataNascimento.setText("${utente.dataNascimento.day}/${utente.dataNascimento.month+1}/${utente.dataNascimento.year}")
     }
 
     fun navegaListaUtentes() {

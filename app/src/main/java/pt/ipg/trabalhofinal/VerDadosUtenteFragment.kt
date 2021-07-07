@@ -39,20 +39,20 @@ class VerDadosUtenteFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        textViewNome = view.findViewById(R.id.textViewNomeApaga)
-        textViewDoses = view.findViewById(R.id.textViewDosesApaga)
-        textViewTelefone = view.findViewById(R.id.textViewTelefoneApaga)
-        textViewEmail = view.findViewById(R.id.textViewEmailApaga)
-        textViewMorada = view.findViewById(R.id.textViewMoradaApaga)
-        textViewDataNascimento = view.findViewById(R.id.textViewDataNascimentoApaga)
+        textViewNome = view.findViewById(R.id.textViewNomeVer)
+        textViewDoses = view.findViewById(R.id.textViewDosesVer)
+        textViewTelefone = view.findViewById(R.id.textViewTelefoneVer)
+        textViewEmail = view.findViewById(R.id.textViewEmailVer)
+        textViewMorada = view.findViewById(R.id.textViewMoradaVer)
+        textViewDataNascimento = view.findViewById(R.id.textViewDataNascimentoVer)
 
         val utente = DadosApp.utenteSelecionado!!
         textViewNome.setText(utente.nome)
-        textViewDoses.setText(utente.dose)
+        textViewDoses.setText(utente.dose.toString())
         textViewTelefone.setText(utente.telefone)
         textViewEmail.setText(utente.email)
         textViewMorada.setText(utente.morada)
-        textViewDataNascimento.setText("${utente.dataNascimento.day}/${utente.dataNascimento.month}/${utente.dataNascimento.year+1900}")
+        textViewDataNascimento.setText("${utente.dataNascimento.day}/${utente.dataNascimento.month+1}/${utente.dataNascimento.year}")
     }
 
     fun navegaListaUtentes() {
@@ -61,7 +61,7 @@ class VerDadosUtenteFragment : Fragment() {
 
     fun processaOpcaoMenu(item: MenuItem): Boolean {
         when (item.itemId) {
-            R.id.action_cancelar_apagar_utente -> navegaListaUtentes()
+            R.id.action_voltar -> navegaListaUtentes()
             else -> return false
         }
 

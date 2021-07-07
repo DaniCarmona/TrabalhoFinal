@@ -22,9 +22,6 @@
         android:id="@+id/action_ver_dados_utente"
         android:title="@string/ver_dados_utentes" />
     <item
-        android:id="@+id/action_ver_doses_utente"
-        android:title="@string/ver_doses_do_utente" />
-    <item
         android:id="@+id/action_menu_princial"
         android:title="@string/menu_principal" />
     <item

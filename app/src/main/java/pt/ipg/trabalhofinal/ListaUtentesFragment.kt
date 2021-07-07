@@ -63,10 +63,6 @@ class ListaUtentesFragment : Fragment(), LoaderManager.LoaderCallbacks<Cursor> {
         //todo: navegar para o fragmento para nova dose
     }
 
-    fun navegaVerDosesUtente() {
-        //todo: navegar para o fragmento para ver as doses do utente
-    }
-
     fun navegaVerDadosUtente() {
         findNavController().navigate(R.id.action_ListaUtentesFragment_to_verDadosUtenteFragment)
     }
@@ -84,7 +80,6 @@ class ListaUtentesFragment : Fragment(), LoaderManager.LoaderCallbacks<Cursor> {
             R.id.action_novo_utente -> navegaNovoUtente()
             R.id.action_editar_utente -> navegaEditarUtente()
             R.id.action_nova_dose -> navegaNovaDose()
-            R.id.action_ver_doses_utente -> navegaVerDosesUtente()
             R.id.action_ver_dados_utente -> navegaVerDadosUtente()
             R.id.action_apagar_utente -> navegaApagarUtente()
             R.id.action_menu_princial -> navegaMenuPrincipal()
