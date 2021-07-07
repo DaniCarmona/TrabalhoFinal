@@ -29,9 +29,5 @@
     <string name="erro_inserir_utente">Erro ao inserir utente</string>
     <string name="utente_guardado_sucesso">Utente guardado com sucesso</string>
     <string name="data_de_nacimento">Data de Nacimento</string>
-    <string name="dia">Dia</string>
-    <string name="ano">Ano</string>
-    <string name="mes">Mês</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="erro_alterar_utente">Erro ao alterar utente</string>
 </resources>
