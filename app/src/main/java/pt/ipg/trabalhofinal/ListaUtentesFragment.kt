@@ -56,7 +56,7 @@ class ListaUtentesFragment : Fragment(), LoaderManager.LoaderCallbacks<Cursor> {
     }
 
     fun navegaEditarUtente() {
-        //todo: navegar para o fragmento da edição de um utente
+        findNavController().navigate(R.id.action_ListaUtentesFragment_to_editarUtenteFragment)
     }
 
     fun navegaNovaDose() {
@@ -68,11 +68,11 @@ class ListaUtentesFragment : Fragment(), LoaderManager.LoaderCallbacks<Cursor> {
     }
 
     fun navegaVerDadosUtente() {
-        //todo: navegar para o fragmento para ver todas as doses
+        findNavController().navigate(R.id.action_ListaUtentesFragment_to_verDadosUtenteFragment)
     }
 
     fun navegaApagarUtente() {
-        //todo: navegar para o fragmento para ver o sotck de vacinas
+        findNavController().navigate(R.id.action_ListaUtentesFragment_to_apagarUtenteFragment)
     }
 
     fun processaOpcaoMenu(item: MenuItem): Boolean {

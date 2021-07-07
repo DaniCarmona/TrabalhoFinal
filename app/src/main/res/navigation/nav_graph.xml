@@ -17,6 +17,12 @@
         <action
             android:id="@+id/action_ListaUtentesFragment_to_editarUtenteFragment"
             app:destination="@id/editarUtenteFragment" />
+        <action
+            android:id="@+id/action_ListaUtentesFragment_to_apagarUtenteFragment"
+            app:destination="@id/apagarUtenteFragment" />
+        <action
+            android:id="@+id/action_ListaUtentesFragment_to_verDadosUtenteFragment"
+            app:destination="@id/verDadosUtenteFragment" />
     </fragment>
     <fragment
         android:id="@+id/NovoUtenteFragment"
@@ -31,10 +37,28 @@
     <fragment
         android:id="@+id/editarUtenteFragment"
         android:name="pt.ipg.trabalhofinal.EditarUtenteFragment"
-        android:label="fragment_editar_utente"
-        tools:layout="@layout/fragment_editar_utente" >
+        android:label="@string/editar_utente_fragment_label"
+        tools:layout="@layout/fragment_editar_utente">
         <action
             android:id="@+id/action_editarUtenteFragment_to_ListaUtentesFragment"
+            app:destination="@id/ListaUtentesFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/apagarUtenteFragment"
+        android:name="pt.ipg.trabalhofinal.ApagarUtenteFragment"
+        android:label="fragment_apagar_utente"
+        tools:layout="@layout/fragment_apagar_utente" >
+        <action
+            android:id="@+id/action_apagarUtenteFragment_to_ListaUtentesFragment"
+            app:destination="@id/ListaUtentesFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/verDadosUtenteFragment"
+        android:name="pt.ipg.trabalhofinal.VerDadosUtenteFragment"
+        android:label="fragment_ver_dados_utente"
+        tools:layout="@layout/fragment_ver_dados_utente" >
+        <action
+            android:id="@+id/action_verDadosUtenteFragment_to_ListaUtentesFragment"
             app:destination="@id/ListaUtentesFragment" />
     </fragment>
 </navigation>

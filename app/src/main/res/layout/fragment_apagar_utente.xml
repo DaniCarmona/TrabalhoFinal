@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ApagarUtenteFragment" >
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margem_ecra"
+        android:layout_marginLeft="@dimen/margem_ecra"
+        android:layout_marginTop="@dimen/margem_ecra"
+        android:layout_marginEnd="@dimen/margem_ecra"
+        android:layout_marginRight="@dimen/margem_ecra"
+        android:text="@string/nome"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+        android:textColor="@color/cor_destaque" />
+
+    <TextView
+        android:id="@+id/textViewNomeApaga"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margem_ecra"
+        android:layout_marginLeft="@dimen/margem_ecra"
+        android:layout_marginTop="@dimen/margem_campos"
+        android:layout_marginEnd="@dimen/margem_ecra"
+        android:layout_marginRight="@dimen/margem_ecra"
+        tools:text="O Leão que Temos Cá Dentro"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margem_ecra"
+        android:layout_marginLeft="@dimen/margem_ecra"
+        android:layout_marginTop="@dimen/margem_campos"
+        android:layout_marginEnd="@dimen/margem_ecra"
+        android:layout_marginRight="@dimen/margem_ecra"
+        android:text="@string/doses"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+        android:textColor="@color/cor_destaque" />
+
+    <TextView
+        android:id="@+id/textViewDosesApaga"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margem_ecra"
+        android:layout_marginLeft="@dimen/margem_ecra"
+        android:layout_marginTop="@dimen/margem_campos"
+        android:layout_marginEnd="@dimen/margem_ecra"
+        android:layout_marginRight="@dimen/margem_ecra"
+        tools:text="Rachel Bright"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margem_ecra"
+        android:layout_marginLeft="@dimen/margem_ecra"
+        android:layout_marginTop="@dimen/margem_campos"
+        android:layout_marginEnd="@dimen/margem_ecra"
+        android:layout_marginRight="@dimen/margem_ecra"
+        android:text="@string/telefone"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+        android:textColor="@color/cor_destaque" />
+
+    <TextView
+        android:id="@+id/textViewTelefoneApaga"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margem_ecra"
+        android:layout_marginLeft="@dimen/margem_ecra"
+        android:layout_marginTop="@dimen/margem_campos"
+        android:layout_marginEnd="@dimen/margem_ecra"
+        android:layout_marginRight="@dimen/margem_ecra"
+        tools:text="Aventura"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margem_ecra"
+        android:layout_marginLeft="@dimen/margem_ecra"
+        android:layout_marginTop="@dimen/margem_campos"
+        android:layout_marginEnd="@dimen/margem_ecra"
+        android:layout_marginRight="@dimen/margem_ecra"
+        android:text="@string/email"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+        android:textColor="@color/cor_destaque" />
+
+    <TextView
+        android:id="@+id/textViewEmailApaga"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margem_ecra"
+        android:layout_marginLeft="@dimen/margem_ecra"
+        android:layout_marginTop="@dimen/margem_campos"
+        android:layout_marginEnd="@dimen/margem_ecra"
+        android:layout_marginRight="@dimen/margem_ecra"
+        tools:text="Aventura"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margem_ecra"
+        android:layout_marginLeft="@dimen/margem_ecra"
+        android:layout_marginTop="@dimen/margem_campos"
+        android:layout_marginEnd="@dimen/margem_ecra"
+        android:layout_marginRight="@dimen/margem_ecra"
+        android:text="@string/morada"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+        android:textColor="@color/cor_destaque" />
+
+    <TextView
+        android:id="@+id/textViewMoradaApaga"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margem_ecra"
+        android:layout_marginLeft="@dimen/margem_ecra"
+        android:layout_marginTop="@dimen/margem_campos"
+        android:layout_marginEnd="@dimen/margem_ecra"
+        android:layout_marginRight="@dimen/margem_ecra"
+        tools:text="Aventura"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margem_ecra"
+        android:layout_marginLeft="@dimen/margem_ecra"
+        android:layout_marginTop="@dimen/margem_campos"
+        android:layout_marginEnd="@dimen/margem_ecra"
+        android:layout_marginRight="@dimen/margem_ecra"
+        android:text="@string/data_de_nacimento"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+        android:textColor="@color/cor_destaque" />
+
+    <TextView
+        android:id="@+id/textViewDataNascimentoApaga"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margem_ecra"
+        android:layout_marginLeft="@dimen/margem_ecra"
+        android:layout_marginTop="@dimen/margem_campos"
+        android:layout_marginEnd="@dimen/margem_ecra"
+        android:layout_marginRight="@dimen/margem_ecra"
+        tools:text="Aventura"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+</LinearLayout>

@@ -197,7 +197,7 @@ class TesteBaseDados {
         utente.telefone="+355 965734894"
         utente.email="asousa@hotmai.com"
         utente.morada="Rua da Fonte, Viseu"
-        utente.dataNascimento=31061975
+        utente.dataNascimento=Date(1997-1900, 5,25)
         utente.dose=1
         val registosAlterados = tabelaUtentes.update(
             utente.toContentValues(),

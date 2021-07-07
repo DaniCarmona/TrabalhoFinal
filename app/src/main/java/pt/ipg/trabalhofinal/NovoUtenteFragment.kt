@@ -1,7 +1,6 @@
 package pt.ipg.trabalhofinal
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.MenuItem
 import android.view.View
@@ -9,10 +8,12 @@ import android.view.ViewGroup
 import android.widget.CalendarView
 import android.widget.EditText
 import android.widget.Toast
+import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.google.android.material.snackbar.Snackbar
 import pt.ipg.trabalhofinal.databinding.FragmentNovoUtenteBinding
 import java.util.*
+
 
 /**
  * A simple [Fragment] subclass as the second destination in the navigation.
@@ -91,14 +92,17 @@ class NovoUtenteFragment : Fragment(){
             return
         }
 
-        val dataNascimento = calendarViewDataNascimento.date
+        val dataNascimentoMillis = calendarViewDataNascimento.date
+        val calendar = Calendar.getInstance()
+        calendar.timeInMillis = dataNascimentoMillis
+        //val dataNascimento
        /* if (dataNascimento == 0) {
             editTextDiaNascimento.setError(getString(R.string.preencha_data_nascimento))
             editTextDiaNascimento.requestFocus()
             return
         }*/
 
-        val utente = Utente(nome = nome, telefone = telefone, email = email, morada = morada, dataNascimento = Date(dataNascimento), dose = 0)
+        val utente = Utente(nome = nome, telefone = telefone, email = email, morada = morada, dataNascimento = Date(calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH), calendar.get(Calendar.DATE)), dose = 0)
 
         val uri = activity?.contentResolver?.insert(
             ContentProviderArmazemVacinas.ENDERECO_UTENTES,

@@ -1,9 +1,10 @@
 <resources>
     <string name="app_name">TrabalhoFinal</string>
     <string name="action_settings">Settings</string>
-    <!-- Strings used for fragments for navigation -->
+
     <string name="lista_utentes_fragment_label">Utentes</string>
     <string name="novo_utente_fragment_label">Novo Utente</string>
+    <string name="editar_utente_fragment_label">Editar Utente</string>
     <string name="next">Next</string>
     <string name="previous">Previous</string>
 
@@ -18,7 +19,7 @@
     <string name="email">Email</string>
     <string name="morada">Morada</string>
     <string name="data_nascimento">Data de Nascimento</string>
-    <string name="versao">Livros v. 1.0</string>
+    <string name="versao">Armazem de Vacinas v. 1.0</string>
     <string name="guardar">Guardar</string>
     <string name="cancelar">Cancelar</string>
     <string name="preencha_nome">Preencha o título</string>
@@ -30,4 +31,7 @@
     <string name="utente_guardado_sucesso">Utente guardado com sucesso</string>
     <string name="data_de_nacimento">Data de Nacimento</string>
     <string name="erro_alterar_utente">Erro ao alterar utente</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="doses">Doses</string>
 </resources>
