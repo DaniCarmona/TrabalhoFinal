@@ -17,10 +17,13 @@ import androidx.navigation.fragment.findNavController
  * Use the [EliminaLivroFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-class EliminaLivroFragment : Fragment() {
-    private lateinit var textViewTitulo: TextView
-    private lateinit var textViewAutor: TextView
-    private lateinit var textViewCategoria: TextView
+class ApagarUtenteFragment : Fragment() {
+    private lateinit var textViewNome: TextView
+    private lateinit var textViewDoses: TextView
+    private lateinit var textViewTelefone: TextView
+    private lateinit var textViewEmail: TextView
+    private lateinit var textViewMorada: TextView
+    private lateinit var textViewDataNascimento: TextView
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -36,24 +39,30 @@ class EliminaLivroFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        textViewTitulo = view.findViewById(R.id.textViewTitulo)
-        textViewAutor = view.findViewById(R.id.textViewAutor)
-        textViewCategoria = view.findViewById(R.id.textViewCategoria)
+        textViewNome = view.findViewById(R.id.textViewNomeApaga)
+        textViewDoses = view.findViewById(R.id.textViewDosesApaga)
+        textViewTelefone = view.findViewById(R.id.textViewTelefoneApaga)
+        textViewEmail = view.findViewById(R.id.textViewEmailApaga)
+        textViewMorada = view.findViewById(R.id.textViewMoradaApaga)
+        textViewDataNascimento = view.findViewById(R.id.textViewDataNascimentoApaga)
 
-        val livro = DadosApp.livroSelecionado!!
-        textViewTitulo.setText(livro.titulo)
-        textViewAutor.setText(livro.autor)
-        textViewCategoria.setText(livro.nomeCategoria)
+        val utente = DadosApp.utenteSelecionado!!
+        textViewNome.setText(utente.nome)
+        textViewDoses.setText(utente.dose)
+        textViewTelefone.setText(utente.telefone)
+        textViewEmail.setText(utente.email)
+        textViewMorada.setText(utente.morada)
+        textViewDataNascimento.setText("${utente.dataNascimento.day}/${utente.dataNascimento.month}/${utente.dataNascimento.year+1900}")
     }
 
-    fun navegaListaLivros() {
-        findNavController().navigate(R.id.action_eliminaLivroFragment_to_listaLivrosFragment)
+    fun navegaListaUtentes() {
+        findNavController().navigate(R.id.action_apagarUtenteFragment_to_ListaUtentesFragment)
     }
 
     fun elimina() {
         val uriLivro = Uri.withAppendedPath(
-            ContentProviderLivros.ENDERECO_LIVROS,
-            DadosApp.livroSelecionado!!.id.toString()
+            ContentProviderArmazemVacinas.ENDERECO_UTENTES,
+            DadosApp.utenteSelecionado!!.id.toString()
         )
 
         val registos = activity?.contentResolver?.delete(
@@ -65,7 +74,7 @@ class EliminaLivroFragment : Fragment() {
         if (registos != 1) {
             Toast.makeText(
                 requireContext(),
-                R.string.erro_eliminar_livro,
+                R.string.erro_apagar_utente,
                 Toast.LENGTH_LONG
             ).show()
             return
@@ -73,16 +82,16 @@ class EliminaLivroFragment : Fragment() {
 
         Toast.makeText(
             requireContext(),
-            R.string.livro_eliminado_sucesso,
+            R.string.utente_apagado_sucesso,
             Toast.LENGTH_LONG
         ).show()
-        navegaListaLivros()
+        navegaListaUtentes()
     }
 
     fun processaOpcaoMenu(item: MenuItem): Boolean {
         when (item.itemId) {
-            R.id.action_confirma_eliminar_livro -> elimina()
-            R.id.action_cancelar_eliminar_livro -> navegaListaLivros()
+            R.id.action_confirma_apagar_utente -> elimina()
+            R.id.action_cancelar_apagar_utente -> navegaListaUtentes()
             else -> return false
         }
 

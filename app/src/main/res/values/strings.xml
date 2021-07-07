@@ -5,6 +5,8 @@
     <string name="lista_utentes_fragment_label">Utentes</string>
     <string name="novo_utente_fragment_label">Novo Utente</string>
     <string name="editar_utente_fragment_label">Editar Utente</string>
+    <string name="apagar_utente_fragment_label">Apagar o Utente</string>
+    <string name="ver_dados_utente_fragment_label">Dados do Utente</string>
     <string name="next">Next</string>
     <string name="previous">Previous</string>
 
@@ -31,7 +33,8 @@
     <string name="utente_guardado_sucesso">Utente guardado com sucesso</string>
     <string name="data_de_nacimento">Data de Nacimento</string>
     <string name="erro_alterar_utente">Erro ao alterar utente</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="doses">Doses</string>
+    <string name="erro_apagar_utente">Erro ao apagar utente</string>
+    <string name="utente_apagado_sucesso">Utente apagado com sucesso</string>
+    <string name="voltar">Voltar</string>
 </resources>

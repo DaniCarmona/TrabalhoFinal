@@ -62,17 +62,17 @@ class AdapterUtentes(val fragment: ListaUtentesFragment) : RecyclerView.Adapter<
             itemView.setBackgroundResource(android.R.color.white)
         }
 
-        fun calculaIdade( dataNacimento: Date): Int{
+        fun calculaIdade( dataNascimento: Date): Int{
             val idade:Int
-            if((data.get(Calendar.MONTH)+1) > dataNacimento.month){
-                 idade = data.get(Calendar.YEAR) - (dataNacimento.year+1900)
-            }else if((data.get(Calendar.MONTH)+1) < dataNacimento.month){
-                 idade = data.get(Calendar.YEAR) - (dataNacimento.year+1900) -1
+            if((data.get(Calendar.MONTH)+1) > dataNascimento.month){
+                 idade = data.get(Calendar.YEAR) - (dataNascimento.year+1900)
+            }else if((data.get(Calendar.MONTH)+1) < dataNascimento.month){
+                 idade = data.get(Calendar.YEAR) - (dataNascimento.year+1900) -1
             }else {
-                if((data.get(Calendar.DATE)) >= dataNacimento.day){
-                    idade = data.get(Calendar.YEAR) - (dataNacimento.year+1900)
+                if((data.get(Calendar.DATE)) >= dataNascimento.day){
+                    idade = data.get(Calendar.YEAR) - (dataNascimento.year+1900)
                 }else{
-                    idade = data.get(Calendar.YEAR) - (dataNacimento.year+1900)-1
+                    idade = data.get(Calendar.YEAR) - (dataNascimento.year+1900)-1
                 }
             }
 

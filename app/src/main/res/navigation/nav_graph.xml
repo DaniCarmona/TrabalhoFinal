@@ -46,8 +46,8 @@
     <fragment
         android:id="@+id/apagarUtenteFragment"
         android:name="pt.ipg.trabalhofinal.ApagarUtenteFragment"
-        android:label="fragment_apagar_utente"
-        tools:layout="@layout/fragment_apagar_utente" >
+        android:label="@string/apagar_utente_fragment_label"
+        tools:layout="@layout/fragment_apagar_utente">
         <action
             android:id="@+id/action_apagarUtenteFragment_to_ListaUtentesFragment"
             app:destination="@id/ListaUtentesFragment" />
@@ -55,8 +55,8 @@
     <fragment
         android:id="@+id/verDadosUtenteFragment"
         android:name="pt.ipg.trabalhofinal.VerDadosUtenteFragment"
-        android:label="fragment_ver_dados_utente"
-        tools:layout="@layout/fragment_ver_dados_utente" >
+        android:label="@string/ver_dados_utente_fragment_label"
+        tools:layout="@layout/fragment_ver_dados_utente">
         <action
             android:id="@+id/action_verDadosUtenteFragment_to_ListaUtentesFragment"
             app:destination="@id/ListaUtentesFragment" />
