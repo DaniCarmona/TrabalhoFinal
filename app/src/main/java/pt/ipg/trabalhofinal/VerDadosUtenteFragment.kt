@@ -1,59 +1,70 @@
 package pt.ipg.trabalhofinal
 
+import android.net.Uri
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
+import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
-
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
+import android.widget.TextView
+import android.widget.Toast
+import androidx.loader.app.LoaderManager
+import androidx.navigation.fragment.findNavController
 
 /**
  * A simple [Fragment] subclass.
- * Use the [VerDadosUtenteFragment.newInstance] factory method to
+ * Use the [EliminaLivroFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
 class VerDadosUtenteFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
+    private lateinit var textViewNome: TextView
+    private lateinit var textViewDoses: TextView
+    private lateinit var textViewTelefone: TextView
+    private lateinit var textViewEmail: TextView
+    private lateinit var textViewMorada: TextView
+    private lateinit var textViewDataNascimento: TextView
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        DadosApp.fragment = this
+        (activity as MainActivity).menuAtual = R.menu.menu_ver_dados_utente
+
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_ver_dados_utente, container, false)
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment VerDadosUtenteFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            VerDadosUtenteFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        textViewNome = view.findViewById(R.id.textViewNomeApaga)
+        textViewDoses = view.findViewById(R.id.textViewDosesApaga)
+        textViewTelefone = view.findViewById(R.id.textViewTelefoneApaga)
+        textViewEmail = view.findViewById(R.id.textViewEmailApaga)
+        textViewMorada = view.findViewById(R.id.textViewMoradaApaga)
+        textViewDataNascimento = view.findViewById(R.id.textViewDataNascimentoApaga)
+
+        val utente = DadosApp.utenteSelecionado!!
+        textViewNome.setText(utente.nome)
+        textViewDoses.setText(utente.dose)
+        textViewTelefone.setText(utente.telefone)
+        textViewEmail.setText(utente.email)
+        textViewMorada.setText(utente.morada)
+        textViewDataNascimento.setText("${utente.dataNascimento.day}/${utente.dataNascimento.month}/${utente.dataNascimento.year+1900}")
+    }
+
+    fun navegaListaUtentes() {
+        findNavController().navigate(R.id.action_verDadosUtenteFragment_to_ListaUtentesFragment)
+    }
+
+    fun processaOpcaoMenu(item: MenuItem): Boolean {
+        when (item.itemId) {
+            R.id.action_cancelar_apagar_utente -> navegaListaUtentes()
+            else -> return false
+        }
+
+        return true
     }
 }
