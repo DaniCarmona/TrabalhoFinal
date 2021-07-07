@@ -14,6 +14,9 @@
         <action
             android:id="@+id/action_ListaUtentesFragment_to_NovoUtenteFragment"
             app:destination="@id/NovoUtenteFragment" />
+        <action
+            android:id="@+id/action_ListaUtentesFragment_to_editarUtenteFragment"
+            app:destination="@id/editarUtenteFragment" />
     </fragment>
     <fragment
         android:id="@+id/NovoUtenteFragment"
@@ -23,6 +26,15 @@
 
         <action
             android:id="@+id/action_NovoUtenteFragment_to_ListaUtentesFragment"
+            app:destination="@id/ListaUtentesFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/editarUtenteFragment"
+        android:name="pt.ipg.trabalhofinal.EditarUtenteFragment"
+        android:label="fragment_editar_utente"
+        tools:layout="@layout/fragment_editar_utente" >
+        <action
+            android:id="@+id/action_editarUtenteFragment_to_ListaUtentesFragment"
             app:destination="@id/ListaUtentesFragment" />
     </fragment>
 </navigation>
