@@ -75,6 +75,10 @@ class ListaUtentesFragment : Fragment(), LoaderManager.LoaderCallbacks<Cursor> {
         findNavController().navigate(R.id.action_ListaUtentesFragment_to_apagarUtenteFragment)
     }
 
+    fun navegaMenuPrincipal() {
+        findNavController().navigate(R.id.action_ListaUtentesFragment_to_menuPrincipalFragment)
+    }
+
     fun processaOpcaoMenu(item: MenuItem): Boolean {
         when (item.itemId) {
             R.id.action_novo_utente -> navegaNovoUtente()
@@ -83,6 +87,7 @@ class ListaUtentesFragment : Fragment(), LoaderManager.LoaderCallbacks<Cursor> {
             R.id.action_ver_doses_utente -> navegaVerDosesUtente()
             R.id.action_ver_dados_utente -> navegaVerDadosUtente()
             R.id.action_apagar_utente -> navegaApagarUtente()
+            R.id.action_menu_princial -> navegaMenuPrincipal()
             else -> return false
         }
 

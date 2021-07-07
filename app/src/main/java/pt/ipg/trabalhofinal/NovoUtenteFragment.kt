@@ -52,6 +52,7 @@ class NovoUtenteFragment : Fragment(){
         editTextEmail = view.findViewById(R.id.editTextEmail)
         editTextMorada = view.findViewById(R.id.editTextMorada)
         calendarViewDataNascimento = view.findViewById(R.id.calendarViewDataNascimento)
+
     }
 
     override fun onDestroyView() {

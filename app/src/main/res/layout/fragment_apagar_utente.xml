@@ -140,7 +140,7 @@
         android:layout_marginTop="@dimen/margem_campos"
         android:layout_marginEnd="@dimen/margem_ecra"
         android:layout_marginRight="@dimen/margem_ecra"
-        android:text="@string/data_de_nacimento"
+        android:text="@string/data_nascimento"
         android:textAppearance="@style/TextAppearance.AppCompat.Small"
         android:textColor="@color/cor_destaque" />
 

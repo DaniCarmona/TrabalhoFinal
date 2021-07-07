@@ -9,15 +9,15 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import android.widget.Toast
-import androidx.loader.app.LoaderManager
 import androidx.navigation.fragment.findNavController
 
 /**
  * A simple [Fragment] subclass.
- * Use the [EliminaLivroFragment.newInstance] factory method to
+ * Use the [ApagaUtenteFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-class ApagarUtenteFragment : Fragment() {
+class ApagarUtenteFragment : Fragment(){
+
     private lateinit var textViewNome: TextView
     private lateinit var textViewDoses: TextView
     private lateinit var textViewTelefone: TextView
@@ -32,7 +32,7 @@ class ApagarUtenteFragment : Fragment() {
         DadosApp.fragment = this
         (activity as MainActivity).menuAtual = R.menu.menu_apagar_utente
 
-        // Inflate the layout for this fragment
+        //Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_apagar_utente, container, false)
     }
 
@@ -59,14 +59,14 @@ class ApagarUtenteFragment : Fragment() {
         findNavController().navigate(R.id.action_apagarUtenteFragment_to_ListaUtentesFragment)
     }
 
-    fun elimina() {
-        val uriLivro = Uri.withAppendedPath(
+    fun apaga() {
+        val uriUtente = Uri.withAppendedPath(
             ContentProviderArmazemVacinas.ENDERECO_UTENTES,
             DadosApp.utenteSelecionado!!.id.toString()
         )
 
         val registos = activity?.contentResolver?.delete(
-            uriLivro,
+            uriUtente,
             null,
             null
         )
@@ -90,7 +90,7 @@ class ApagarUtenteFragment : Fragment() {
 
     fun processaOpcaoMenu(item: MenuItem): Boolean {
         when (item.itemId) {
-            R.id.action_confirma_apagar_utente -> elimina()
+            R.id.action_confirma_apagar_utente -> apaga()
             R.id.action_cancelar_apagar_utente -> navegaListaUtentes()
             else -> return false
         }
