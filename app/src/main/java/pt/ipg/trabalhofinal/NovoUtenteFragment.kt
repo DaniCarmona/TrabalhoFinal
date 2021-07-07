@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
+import android.widget.CalendarView
 import android.widget.EditText
 import android.widget.Toast
 import androidx.navigation.fragment.findNavController
@@ -19,16 +20,12 @@ import java.util.*
 class NovoUtenteFragment : Fragment(){
 
     private var _binding: FragmentNovoUtenteBinding? = null
-    private var data: Date = Date(1900-1900, 0,0)
 
     private lateinit var editTextNome: EditText
     private lateinit var editTextTelefone: EditText
     private lateinit var editTextEmail: EditText
     private lateinit var editTextMorada: EditText
-    private lateinit var editTextDiaNascimento: EditText
-    private lateinit var editTextMesNascimento: EditText
-    private lateinit var editTextAnoNascimento: EditText
-
+    private lateinit var calendarViewDataNascimento: CalendarView
 
 
     // This property is only valid between onCreateView and
@@ -53,10 +50,7 @@ class NovoUtenteFragment : Fragment(){
         editTextTelefone = view.findViewById(R.id.editTextTelefone)
         editTextEmail = view.findViewById(R.id.editTextEmail)
         editTextMorada = view.findViewById(R.id.editTextMorada)
-        editTextDiaNascimento = view.findViewById(R.id.editTextDiaNascimento)
-        editTextMesNascimento = view.findViewById(R.id.editTextMesNascimento)
-        editTextAnoNascimento = view.findViewById(R.id.editTextAnoNascimento)
-
+        calendarViewDataNascimento = view.findViewById(R.id.calendarViewDataNascimento)
     }
 
     override fun onDestroyView() {
@@ -97,33 +91,14 @@ class NovoUtenteFragment : Fragment(){
             return
         }
 
-        val diaNascimentoString = editTextDiaNascimento.toString()
-        val diaNascimento = diaNascimentoString.toInt()
-        if (diaNascimento == 0) {
+        val dataNascimento = calendarViewDataNascimento.date
+       /* if (dataNascimento == 0) {
             editTextDiaNascimento.setError(getString(R.string.preencha_data_nascimento))
             editTextDiaNascimento.requestFocus()
             return
-        }
+        }*/
 
-        val mesNascimentoString = editTextMesNascimento.toString()
-        val mesNascimento = mesNascimentoString.toInt()
-        if (mesNascimento == 0) {
-            editTextMesNascimento.setError(getString(R.string.preencha_data_nascimento))
-            editTextMesNascimento.requestFocus()
-            return
-        }
-        val anoNascimentoString = editTextAnoNascimento.toString()
-        val anoNascimento = anoNascimentoString.toInt()
-        if (anoNascimento == 0) {
-            editTextAnoNascimento.setError(getString(R.string.preencha_data_nascimento))
-            editTextAnoNascimento.requestFocus()
-            return
-        }
-
-
-
-
-       val utente = Utente(nome = nome, telefone = telefone, email = email, morada = morada, dataNascimento = Date(anoNascimento,  mesNascimento-1, diaNascimento), dose = 0)
+        val utente = Utente(nome = nome, telefone = telefone, email = email, morada = morada, dataNascimento = Date(dataNascimento), dose = 0)
 
         val uri = activity?.contentResolver?.insert(
             ContentProviderArmazemVacinas.ENDERECO_UTENTES,
