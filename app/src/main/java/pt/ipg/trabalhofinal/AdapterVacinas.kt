@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import java.util.*
 
 
-class AdapterUtentes(val fragment: ListaUtentesFragment) : RecyclerView.Adapter<AdapterUtentes.ViewHolderUtente>() {
+class AdapterVacinas(val fragment: ListaVacinasFragment) : RecyclerView.Adapter<AdapterVacinas.ViewHolderVacina>() {
     public var cursor: Cursor? = null
         get() = field
         set(value) {
@@ -16,31 +16,26 @@ class AdapterUtentes(val fragment: ListaUtentesFragment) : RecyclerView.Adapter<
             notifyDataSetChanged()
         }
 
-    class ViewHolderUtente(itemView: View) : RecyclerView.ViewHolder(itemView), View.OnClickListener {
-        private val textViewNome = itemView.findViewById<TextView>(R.id.textViewNome)
-        private val textViewDose = itemView.findViewById<TextView>(R.id.textViewDose)
-        private val textViewIdade = itemView.findViewById<TextView>(R.id.textViewIdade)
-        private val textViewTelefone = itemView.findViewById<TextView>(R.id.textViewTelefone)
-        private val data = Calendar.getInstance()
-        private lateinit var utente: Utente
+    class ViewHolderVacina(itemView: View) : RecyclerView.ViewHolder(itemView), View.OnClickListener {
+        private val textViewNomeVacina = itemView.findViewById<TextView>(R.id.textViewNomeVacina)
+        private val textViewStock = itemView.findViewById<TextView>(R.id.textViewStock)
+        private val textViewEmailFornecedor = itemView.findViewById<TextView>(R.id.textViewEmailFornecedor)
+        private lateinit var vacina: Vacina
 
         init {
             itemView.setOnClickListener(this)
         }
 
-        fun atualizaUtente(utente: Utente) {
-            this.utente = utente
-            val dose = utente.dose.toString()
-            val idade =  calculaIdade(utente.dataNascimento)
-            val telefone = utente.telefone
+        fun atualizaVacina(vacina: Vacina) {
+            this.vacina = vacina
+            val stock =  vacina.stock
+            val emailFornecedor = vacina.email
 
-            textViewNome.text = utente.nome
-            val doseString = "Dose: $dose"
-            textViewDose.text = doseString
-            val idadeString = "Idade: $idade"
-            textViewIdade.text = idadeString
-            val telefoneString = "Telefone: $telefone"
-            textViewTelefone.text = telefoneString
+            textViewNomeVacina.text = vacina.nomeVacina
+            val stockString = "Stock: $stock"
+            textViewStock.text = stockString
+            val emailFornecedorString = "Email do Fornecedor: $emailFornecedor"
+            textViewEmailFornecedor.text = emailFornecedorString
         }
 
         /**
@@ -56,7 +51,7 @@ class AdapterUtentes(val fragment: ListaUtentesFragment) : RecyclerView.Adapter<
         private fun seleciona() {
             selecionado = this
             itemView.setBackgroundResource(R.color.cor_selecao)
-            DadosApp.utenteSelecionado = utente
+            DadosApp.vacinaSelecionada = vacina
             DadosApp.activity.atualizaMenuListaUtentes(true)
         }
 
@@ -65,25 +60,10 @@ class AdapterUtentes(val fragment: ListaUtentesFragment) : RecyclerView.Adapter<
             itemView.setBackgroundResource(android.R.color.white)
         }
 
-        fun calculaIdade( dataNascimento: Date): Int{
-            val idade:Int
-            if((data.get(Calendar.MONTH)+1) > dataNascimento.month){
-                 idade = data.get(Calendar.YEAR) - (dataNascimento.year)
-            }else if((data.get(Calendar.MONTH)+1) < dataNascimento.month){
-                 idade = data.get(Calendar.YEAR) - (dataNascimento.year) -1
-            }else {
-                if((data.get(Calendar.DATE)) >= dataNascimento.day){
-                    idade = data.get(Calendar.YEAR) - (dataNascimento.year)
-                }else{
-                    idade = data.get(Calendar.YEAR) - (dataNascimento.year)-1
-                }
-            }
 
-            return idade
-        }
 
         companion object {
-            var selecionado : ViewHolderUtente? = null
+            var selecionado : ViewHolderVacina? = null
         }
     }
 
@@ -110,10 +90,10 @@ class AdapterUtentes(val fragment: ListaUtentesFragment) : RecyclerView.Adapter<
      * @see .getItemViewType
      * @see .onBindViewHolder
      */
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolderUtente {
-        val itemUtente = fragment.layoutInflater.inflate(R.layout.item_utente, parent, false)
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolderVacina {
+        val itemVacina = fragment.layoutInflater.inflate(R.layout.item_vacina, parent, false)
 
-        return ViewHolderUtente(itemUtente)
+        return ViewHolderVacina(itemVacina)
     }
 
     /**
@@ -137,9 +117,9 @@ class AdapterUtentes(val fragment: ListaUtentesFragment) : RecyclerView.Adapter<
      * item at the given position in the data set.
      * @param position The position of the item within the adapter's data set.
      */
-    override fun onBindViewHolder(holder: ViewHolderUtente, position: Int) {
+    override fun onBindViewHolder(holder: ViewHolderVacina, position: Int) {
         cursor!!.moveToPosition(position)
-        holder.atualizaUtente(Utente.fromCursor(cursor!!))
+        holder.atualizaVacina(Vacina.fromCursor(cursor!!))
     }
 
     /**

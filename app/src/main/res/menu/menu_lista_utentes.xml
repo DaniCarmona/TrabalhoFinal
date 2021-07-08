@@ -16,7 +16,7 @@
         android:id="@+id/action_apagar_utente"
         android:title="@string/apagar_o_utente" />
     <item
-        android:id="@+id/action_aumenta_stock"
+        android:id="@+id/action_nova_dose"
         android:title="@string/nova_dose" />
     <item
         android:id="@+id/action_ver_dados_utente"

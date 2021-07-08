@@ -45,6 +45,8 @@ class MainActivity : AppCompatActivity() {
 
         if(menuAtual == R.menu.menu_lista_utentes) {
             atualizaMenuListaUtentes(false)
+        }else if (menuAtual == R.menu.menu_lista_vacinas){
+            atualizaMenuListaVacinas(false)
         }
         return true
     }
@@ -66,6 +68,7 @@ class MainActivity : AppCompatActivity() {
                 R.menu.menu_apagar_utente -> (DadosApp.fragment as ApagarUtenteFragment).processaOpcaoMenu(item)
                 R.menu.menu_ver_dados_utente -> (DadosApp.fragment as VerDadosUtenteFragment).processaOpcaoMenu(item)
                 R.menu.menu_menu_principal -> (DadosApp.fragment as MenuPrincipalFragment).processaOpcaoMenu(item)
+                R.menu.menu_lista_vacinas -> (DadosApp.fragment as ListaVacinasFragment).processaOpcaoMenu(item)
                 else -> false
             }
         }
@@ -80,8 +83,13 @@ class MainActivity : AppCompatActivity() {
 
     fun atualizaMenuListaUtentes(mostraBotoesUtente : Boolean) {
         menu.findItem(R.id.action_editar_utente).setVisible(mostraBotoesUtente)
-        menu.findItem(R.id.action_aumenta_stock).setVisible(mostraBotoesUtente)
+        menu.findItem(R.id.action_nova_dose).setVisible(mostraBotoesUtente)
         menu.findItem(R.id.action_apagar_utente).setVisible(mostraBotoesUtente)
         menu.findItem(R.id.action_ver_dados_utente).setVisible(mostraBotoesUtente)
+    }
+
+    fun atualizaMenuListaVacinas(mostraBotoesVacina : Boolean) {
+        menu.findItem(R.id.action_editar_vacina).setVisible(mostraBotoesVacina)
+        menu.findItem(R.id.action_aumentar_stock).setVisible(mostraBotoesVacina)
     }
 }

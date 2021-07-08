@@ -7,7 +7,7 @@
     android:orientation="vertical">
 
     <TextView
-        android:id="@+id/textViewNomeVacina"
+        android:id="@+id/textViewNome"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/margem_campos"
@@ -23,15 +23,15 @@
         tools:text="Daniel Filipe Monteiro Carmona" />
 
     <TextView
-        android:id="@+id/textViewStock"
+        android:id="@+id/textViewIdade"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:paddingBottom="@dimen/margem_campos"
         android:textAppearance="@style/TextAppearance.AppCompat.Small"
         android:textColor="#424040"
-        app:layout_constraintStart_toStartOf="@+id/textViewNomeVacina"
-        app:layout_constraintTop_toBottomOf="@+id/textViewNomeVacina"
+        app:layout_constraintStart_toStartOf="@+id/textViewNome"
+        app:layout_constraintTop_toBottomOf="@+id/textViewNome"
         tools:text="Idade: 20" />
 
     <TextView
@@ -49,7 +49,7 @@
         tools:text="Doses: 0" />
 
     <TextView
-        android:id="@+id/textViewEmailFornecedor"
+        android:id="@+id/textViewTelefone"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
@@ -58,7 +58,7 @@
         android:paddingBottom="8dp"
         android:textAppearance="@style/TextAppearance.AppCompat.Small"
         android:textColor="#424040"
-        app:layout_constraintStart_toEndOf="@+id/textViewStock"
-        app:layout_constraintTop_toBottomOf="@+id/textViewNomeVacina"
+        app:layout_constraintStart_toEndOf="@+id/textViewIdade"
+        app:layout_constraintTop_toBottomOf="@+id/textViewNome"
         tools:text="Telefone: +355 987453568" />
 </androidx.constraintlayout.widget.ConstraintLayout>
