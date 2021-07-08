@@ -79,7 +79,7 @@ class ListaUtentesFragment : Fragment(), LoaderManager.LoaderCallbacks<Cursor> {
         when (item.itemId) {
             R.id.action_novo_utente -> navegaNovoUtente()
             R.id.action_editar_utente -> navegaEditarUtente()
-            R.id.action_nova_dose -> navegaNovaDose()
+            R.id.action_aumenta_stock -> navegaNovaDose()
             R.id.action_ver_dados_utente -> navegaVerDadosUtente()
             R.id.action_apagar_utente -> navegaApagarUtente()
             R.id.action_menu_princial -> navegaMenuPrincipal()

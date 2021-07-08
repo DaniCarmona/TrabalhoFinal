@@ -1,7 +1,6 @@
 package pt.ipg.trabalhofinal
 
 import android.os.Bundle
-import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
@@ -81,7 +80,7 @@ class MainActivity : AppCompatActivity() {
 
     fun atualizaMenuListaUtentes(mostraBotoesUtente : Boolean) {
         menu.findItem(R.id.action_editar_utente).setVisible(mostraBotoesUtente)
-        menu.findItem(R.id.action_nova_dose).setVisible(mostraBotoesUtente)
+        menu.findItem(R.id.action_aumenta_stock).setVisible(mostraBotoesUtente)
         menu.findItem(R.id.action_apagar_utente).setVisible(mostraBotoesUtente)
         menu.findItem(R.id.action_ver_dados_utente).setVisible(mostraBotoesUtente)
     }

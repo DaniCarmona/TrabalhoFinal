@@ -72,5 +72,17 @@
         <action
             android:id="@+id/action_menuPrincipalFragment_to_ListaUtentesFragment"
             app:destination="@id/ListaUtentesFragment" />
+        <action
+            android:id="@+id/action_menuPrincipalFragment_to_listaVacinasFragment"
+            app:destination="@id/listaVacinasFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/listaVacinasFragment"
+        android:name="pt.ipg.trabalhofinal.ListaVacinasFragment"
+        android:label="@string/lista_vacinas_fragment_label"
+        tools:layout="@layout/fragment_lista_vacinas">
+        <action
+            android:id="@+id/action_listaVacinasFragment_to_menuPrincipalFragment"
+            app:destination="@id/menuPrincipalFragment" />
     </fragment>
 </navigation>

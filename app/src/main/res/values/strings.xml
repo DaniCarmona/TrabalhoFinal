@@ -3,6 +3,8 @@
     <string name="action_settings">Settings</string>
 
     <string name="lista_utentes_fragment_label">Utentes</string>
+    <string name="lista_vacinas_fragment_label">Vacinas</string>
+    <string name="lista_doses_fragment_label">Doses</string>
     <string name="novo_utente_fragment_label">Novo Utente</string>
     <string name="editar_utente_fragment_label">Editar Utente</string>
     <string name="apagar_utente_fragment_label">Apagar o Utente</string>
@@ -40,5 +42,10 @@
     <string name="utentes">Utentes</string>
     <string name="doses">Doses</string>
     <string name="vacinas">Vacinas</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="nova_vacina">Nova Vacina</string>
+    <string name="editar_vacina">Editar Vacina</string>
+    <string name="aumentar_stock">Aumentar o stock da vacina</string>
 
 </resources>

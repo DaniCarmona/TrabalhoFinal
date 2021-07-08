@@ -17,10 +17,10 @@ class AdapterUtentes(val fragment: ListaUtentesFragment) : RecyclerView.Adapter<
         }
 
     class ViewHolderUtente(itemView: View) : RecyclerView.ViewHolder(itemView), View.OnClickListener {
-        private val textViewNome = itemView.findViewById<TextView>(R.id.textViewNome)
+        private val textViewNome = itemView.findViewById<TextView>(R.id.textViewNomeVacina)
         private val textViewDose = itemView.findViewById<TextView>(R.id.textViewDose)
-        private val textViewIdade = itemView.findViewById<TextView>(R.id.textViewIdade)
-        private val textViewTelefone = itemView.findViewById<TextView>(R.id.textViewTelefone)
+        private val textViewIdade = itemView.findViewById<TextView>(R.id.textViewStock)
+        private val textViewTelefone = itemView.findViewById<TextView>(R.id.textViewEmailFornecedor)
         private val data = Calendar.getInstance()
         private lateinit var utente: Utente
 
