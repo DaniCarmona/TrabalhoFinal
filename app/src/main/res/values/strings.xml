@@ -7,6 +7,7 @@
     <string name="editar_utente_fragment_label">Editar Utente</string>
     <string name="apagar_utente_fragment_label">Apagar o Utente</string>
     <string name="ver_dados_utente_fragment_label">Dados do Utente</string>
+    <string name="menu_principal_fragment_label">Menu Principal</string>
     <string name="next">Next</string>
     <string name="previous">Previous</string>
 
@@ -31,11 +32,13 @@
     <string name="preencha_data_nascimento">Preencha a data de nascimento</string>
     <string name="erro_inserir_utente">Erro ao inserir utente</string>
     <string name="utente_guardado_sucesso">Utente guardado com sucesso</string>
-    <string name="erro_alterar_utente">Erro ao alterar utente</string>
-    <string name="doses">Doses</string>
+    <string name="erro_editar_utente">Erro ao editar utente</string>
     <string name="erro_apagar_utente">Erro ao apagar utente</string>
     <string name="utente_apagado_sucesso">Utente apagado com sucesso</string>
     <string name="voltar">Voltar</string>
     <string name="menu_principal">Menu Principal</string>
+    <string name="utentes">Utentes</string>
+    <string name="doses">Doses</string>
+    <string name="vacinas">Vacinas</string>
 
 </resources>

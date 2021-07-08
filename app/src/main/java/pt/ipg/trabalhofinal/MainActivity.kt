@@ -66,7 +66,7 @@ class MainActivity : AppCompatActivity() {
                 R.menu.menu_editar_utente -> (DadosApp.fragment as EditarUtenteFragment).processaOpcaoMenu(item)
                 R.menu.menu_apagar_utente -> (DadosApp.fragment as ApagarUtenteFragment).processaOpcaoMenu(item)
                 R.menu.menu_ver_dados_utente -> (DadosApp.fragment as VerDadosUtenteFragment).processaOpcaoMenu(item)
-                //R.menu.menu_menu_principal -> (DadosApp.fragment as MenuPrincipalFragment).processaOpcaoMenu(item)
+                R.menu.menu_menu_principal -> (DadosApp.fragment as MenuPrincipalFragment).processaOpcaoMenu(item)
                 else -> false
             }
         }

@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/ListaUtentesFragment">
+    app:startDestination="@id/menuPrincipalFragment">
 
     <fragment
         android:id="@+id/ListaUtentesFragment"
@@ -67,8 +67,8 @@
     <fragment
         android:id="@+id/menuPrincipalFragment"
         android:name="pt.ipg.trabalhofinal.MenuPrincipalFragment"
-        android:label="fragment_menu_principal"
-        tools:layout="@layout/fragment_menu_principal" >
+        android:label="@string/menu_principal_fragment_label"
+        tools:layout="@layout/fragment_menu_principal">
         <action
             android:id="@+id/action_menuPrincipalFragment_to_ListaUtentesFragment"
             app:destination="@id/ListaUtentesFragment" />

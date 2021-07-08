@@ -86,7 +86,9 @@ class EditarUtenteFragment : Fragment(){
             return
         }
 
-        val dataNascimento = calendarViewDataNascimento.date
+        val dataNascimentoMillis = calendarViewDataNascimento.date
+        val calendar = Calendar.getInstance()
+        calendar.timeInMillis = dataNascimentoMillis
         /* if (dataNascimento == 0) {
              editTextDiaNascimento.setError(getString(R.string.preencha_data_nascimento))
              editTextDiaNascimento.requestFocus()
@@ -98,7 +100,7 @@ class EditarUtenteFragment : Fragment(){
         utente.telefone = telefone
         utente.email = email
         utente.morada = morada
-        utente.dataNascimento = Date(dataNascimento)
+        utente.dataNascimento = Date(calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH), calendar.get(Calendar.DATE))
 
         val uriUtente = Uri.withAppendedPath(
             ContentProviderArmazemVacinas.ENDERECO_UTENTES,
@@ -115,7 +117,7 @@ class EditarUtenteFragment : Fragment(){
         if (registos != 1) {
             Toast.makeText(
                 requireContext(),
-                R.string.erro_alterar_utente,
+                R.string.erro_editar_utente,
                 Toast.LENGTH_LONG
             ).show()
             return
