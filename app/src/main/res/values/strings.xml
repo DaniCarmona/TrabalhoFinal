@@ -52,7 +52,8 @@
     <string name="stock_inicial">Stock Inicial</string>
     <string name="preencha_nome_vacina">Preencha o nome da vacina</string>
     <string name="preencha_email_fornecedor">Preencha o email do fornecedor </string>
-    <string name="preencha_stock_inicial">Preencha o stock iniciall</string>
+    <string name="preencha_stock_inicial">Preencha o stock inicial</string>
+    <string name="preencha_stock">Preencha o stock</string>
     <string name="erro_inserir_vacina">Erro ao inserir vacina</string>
     <string name="vacina_guardada_sucesso">Vacina guardada com sucesso</string>
     <string name="erro_editar_vacina">Erro ao editar vacina</string>

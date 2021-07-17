@@ -13,9 +13,6 @@
         android:title="@string/editar_vacina"
         app:showAsAction="ifRoom" />
     <item
-        android:id="@+id/action_aumentar_stock"
-        android:title="@string/aumentar_stock" />
-    <item
         android:id="@+id/action_menu_princial"
         android:title="@string/menu_principal" />
     <item
