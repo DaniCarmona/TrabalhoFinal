@@ -86,9 +86,7 @@ class EditarUtenteFragment : Fragment(){
             return
         }
 
-        val dataNascimentoMillis = calendarViewDataNascimento.date
-        val calendar = Calendar.getInstance()
-        calendar.timeInMillis = dataNascimentoMillis
+        val dataNascimento = calendarViewDataNascimento.date
         /* if (dataNascimento == 0) {
              editTextDiaNascimento.setError(getString(R.string.preencha_data_nascimento))
              editTextDiaNascimento.requestFocus()
@@ -100,7 +98,7 @@ class EditarUtenteFragment : Fragment(){
         utente.telefone = telefone
         utente.email = email
         utente.morada = morada
-        utente.dataNascimento = Date(calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH), calendar.get(Calendar.DATE))
+        utente.dataNascimento = Date(dataNascimento)
 
         val uriUtente = Uri.withAppendedPath(
             ContentProviderArmazemVacinas.ENDERECO_UTENTES,

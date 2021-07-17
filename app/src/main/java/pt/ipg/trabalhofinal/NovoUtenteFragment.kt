@@ -93,17 +93,14 @@ class NovoUtenteFragment : Fragment(){
             return
         }
 
-        val dataNascimentoMillis = calendarViewDataNascimento.date
-        val calendar = Calendar.getInstance()
-        calendar.timeInMillis = dataNascimentoMillis
-        //val dataNascimento
+        val dataNascimento = calendarViewDataNascimento.date
        /* if (dataNascimento == 0) {
             editTextDiaNascimento.setError(getString(R.string.preencha_data_nascimento))
             editTextDiaNascimento.requestFocus()
             return
         }*/
 
-        val utente = Utente(nome = nome, telefone = telefone, email = email, morada = morada, dataNascimento = Date(calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH), calendar.get(Calendar.DATE)), dose = 0)
+        val utente = Utente(nome = nome, telefone = telefone, email = email, morada = morada, dataNascimento = Date(dataNascimento), dose = 0)
 
         val uri = activity?.contentResolver?.insert(
             ContentProviderArmazemVacinas.ENDERECO_UTENTES,

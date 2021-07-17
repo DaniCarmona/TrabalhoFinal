@@ -10,6 +10,8 @@
     <string name="apagar_utente_fragment_label">Apagar o Utente</string>
     <string name="ver_dados_utente_fragment_label">Dados do Utente</string>
     <string name="menu_principal_fragment_label">Menu Principal</string>
+    <string name="nova_vacina_fragment_label">Nova Vacina</string>
+    <string name="editar_vacina_fragment_label">Editar Vacina</string>
     <string name="next">Next</string>
     <string name="previous">Previous</string>
 
@@ -45,5 +47,14 @@
     <string name="nova_vacina">Nova Vacina</string>
     <string name="editar_vacina">Editar Vacina</string>
     <string name="aumentar_stock">Aumentar o stock da vacina</string>
+    <string name="nome_da_vacina">Nome da Vacina</string>
+    <string name="email_fornecedor">Email do Fornecedor</string>
+    <string name="stock_inicial">Stock Inicial</string>
+    <string name="preencha_nome_vacina">Preencha o nome da vacina</string>
+    <string name="preencha_email_fornecedor">Preencha o email do fornecedor </string>
+    <string name="preencha_stock_inicial">Preencha o stock iniciall</string>
+    <string name="erro_inserir_vacina">Erro ao inserir vacina</string>
+    <string name="vacina_guardada_sucesso">Vacina guardada com sucesso</string>
+    <string name="erro_editar_vacina">Erro ao editar vacina</string>
 
 </resources>

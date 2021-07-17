@@ -84,5 +84,29 @@
         <action
             android:id="@+id/action_listaVacinasFragment_to_menuPrincipalFragment"
             app:destination="@id/menuPrincipalFragment" />
+        <action
+            android:id="@+id/action_listaVacinasFragment_to_novaVacinaFragment"
+            app:destination="@id/novaVacinaFragment" />
+        <action
+            android:id="@+id/action_listaVacinasFragment_to_editarVacinaFragment"
+            app:destination="@id/editarVacinaFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/novaVacinaFragment"
+        android:name="pt.ipg.trabalhofinal.NovaVacinaFragment"
+        android:label="@string/nova_vacina_fragment_label"
+        tools:layout="@layout/fragment_nova_vacina">
+        <action
+            android:id="@+id/action_novaVacinaFragment_to_listaVacinasFragment"
+            app:destination="@id/listaVacinasFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/editarVacinaFragment"
+        android:name="pt.ipg.trabalhofinal.EditarVacinaFragment"
+        android:label="@string/editar_vacina_fragment_label"
+        tools:layout="@layout/fragment_editar_vacina">
+        <action
+            android:id="@+id/action_editarVacinaFragment_to_listaVacinasFragment"
+            app:destination="@id/listaVacinasFragment" />
     </fragment>
 </navigation>
