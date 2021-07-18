@@ -79,7 +79,7 @@ class EditarUtenteFragment : Fragment(){
             return
         }
 
-        val morada = editTextTelefone.text.toString()
+        val morada = editTextMorada.text.toString()
         if (morada.isEmpty()) {
             editTextMorada.setError(getString(R.string.preencha_morada))
             editTextMorada.requestFocus()
