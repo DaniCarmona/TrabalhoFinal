@@ -60,7 +60,7 @@ class ListaVacinasFragment : Fragment(), LoaderManager.LoaderCallbacks<Cursor> {
     }
 
     fun navegaAumentarStock() {
-        //findNavController().navigate(R.id.action_ListaUtentesFragment_to_verDadosUtenteFragment)
+        findNavController().navigate(R.id.action_listaVacinasFragment_to_aumentarStockFragment)
     }
 
     fun navegaMenuPrincipal() {

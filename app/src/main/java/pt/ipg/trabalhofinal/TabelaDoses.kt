@@ -31,7 +31,55 @@ class TabelaDoses(db: SQLiteDatabase) : BaseColumns {
         having: String?,
         orderBy: String?
     ): Cursor? {
-        return db.query(NOME_TABELA, columns, selection, selectionArgs, groupBy, having, orderBy)
+        val ultimaColuna = columns.size - 1
+
+        var posColNomeUtente = -1
+        for (i in 0..ultimaColuna) {
+            if (columns[i] == CAMPO_EXTERNO_NOME_UTENTE) {
+                posColNomeUtente = i
+                break
+            }
+        }
+
+        var posColNomeVacina = -1
+        for (i in 0..ultimaColuna) {
+            if (columns[i] == CAMPO_EXTERNO_NOME_VACINA) {
+                posColNomeVacina = i
+                break
+            }
+        }
+
+        if (posColNomeUtente == -1 || posColNomeVacina== -1) {
+            return db.query(NOME_TABELA, columns, selection, selectionArgs, groupBy, having, orderBy)
+        }
+
+        var colunas = ""
+        for (i in 0..ultimaColuna) {
+            if (i > 0) colunas += ","
+
+            colunas += if (i == posColNomeUtente) {
+                "${TabelaUtentes.NOME_TABELA}.${TabelaUtentes.CAMPO_NOME} AS $CAMPO_EXTERNO_NOME_UTENTE"
+            } else if (i == posColNomeVacina) {
+                "${TabelaVacinas.NOME_TABELA}.${TabelaVacinas.CAMPO_NOME_VACINA} AS $CAMPO_EXTERNO_NOME_VACINA"
+            } else {
+                "${NOME_TABELA}.${columns[i]}"
+            }
+        }
+
+        val tabelas = "$NOME_TABELA INNER JOIN ${TabelaUtentes.NOME_TABELA} ON ${TabelaUtentes.NOME_TABELA}.${BaseColumns._ID}=$CAMPO_ID_UTENTE INNER JOIN ${TabelaVacinas.NOME_TABELA} ON ${TabelaVacinas.NOME_TABELA}.${BaseColumns._ID}=$CAMPO_ID_VACINA"
+
+        var sql = "SELECT $colunas FROM $tabelas"
+
+        if (selection != null) sql += " WHERE $selection"
+
+        if (groupBy != null) {
+            sql += " GROUP BY $groupBy"
+            if (having != null) " HAVING $having"
+        }
+
+        if (orderBy != null) sql += " ORDER BY $orderBy"
+
+        return db.rawQuery(sql, selectionArgs)
     }
 
     companion object{
@@ -40,9 +88,11 @@ class TabelaDoses(db: SQLiteDatabase) : BaseColumns {
         const val CAMPO_DOSE = "dose"
         const val CAMPO_ID_UTENTE = "id_utente"
         const val CAMPO_ID_VACINA = "id_vacina"
+        const val CAMPO_EXTERNO_NOME_UTENTE = "nome_utente"
+        const val CAMPO_EXTERNO_NOME_VACINA = "nome_vacina"
 
 
-        val TODOS_CAMPOS =arrayOf(BaseColumns._ID, CAMPO_DATA_ADMINISTRACAO, CAMPO_DOSE, CAMPO_ID_UTENTE, CAMPO_ID_VACINA)
+        val TODOS_CAMPOS =arrayOf(BaseColumns._ID, CAMPO_DATA_ADMINISTRACAO, CAMPO_DOSE, CAMPO_ID_UTENTE, CAMPO_ID_VACINA, CAMPO_EXTERNO_NOME_UTENTE, CAMPO_EXTERNO_NOME_VACINA)
 
     }
 

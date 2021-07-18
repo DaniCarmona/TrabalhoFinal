@@ -75,6 +75,9 @@
         <action
             android:id="@+id/action_menuPrincipalFragment_to_listaVacinasFragment"
             app:destination="@id/listaVacinasFragment" />
+        <action
+            android:id="@+id/action_menuPrincipalFragment_to_listaDosesFragment"
+            app:destination="@id/listaDosesFragment" />
     </fragment>
     <fragment
         android:id="@+id/listaVacinasFragment"
@@ -120,5 +123,14 @@
         <action
             android:id="@+id/action_aumentarStockFragment_to_listaVacinasFragment"
             app:destination="@id/listaVacinasFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/listaDosesFragment"
+        android:name="pt.ipg.trabalhofinal.ListaDosesFragment"
+        android:label="fragment_lista_doses"
+        tools:layout="@layout/fragment_lista_doses" >
+        <action
+            android:id="@+id/action_listaDosesFragment_to_menuPrincipalFragment"
+            app:destination="@id/menuPrincipalFragment" />
     </fragment>
 </navigation>
