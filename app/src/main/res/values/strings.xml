@@ -9,7 +9,7 @@
     <string name="editar_utente_fragment_label">Editar Utente</string>
     <string name="apagar_utente_fragment_label">Apagar o Utente</string>
     <string name="ver_dados_utente_fragment_label">Dados do Utente</string>
-    <string name="menu_principal_fragment_label">Menu Principal</string>
+    <string name="menu_principal_fragment_label">Armazém de Vacinas</string>
     <string name="nova_vacina_fragment_label">Nova Vacina</string>
     <string name="editar_vacina_fragment_label">Editar Vacina</string>
     <string name="aumentar_stock_vacina_fragment_label">Aumentar o Stock da Vacina</string>
@@ -64,4 +64,5 @@
     <string name="valor_invalido">Preencha com um valor superior a 0</string>
     <string name="erro_inserir_dose">Erro ao inserir dose</string>
     <string name="dose_guardada_sucesso">Dose guardada com sucesso</string>
+    <string name="nao_apagar_utente">Não é possivel apagar este utente</string>
 </resources>

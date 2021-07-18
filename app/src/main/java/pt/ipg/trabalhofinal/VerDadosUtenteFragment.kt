@@ -52,7 +52,7 @@ class VerDadosUtenteFragment : Fragment() {
         textViewTelefone.setText(utente.telefone)
         textViewEmail.setText(utente.email)
         textViewMorada.setText(utente.morada)
-        textViewDataNascimento.setText("${utente.dataNascimento.day}/${utente.dataNascimento.month+1}/${utente.dataNascimento.year+1900}")
+        textViewDataNascimento.setText("${utente.dataNascimento.date}/${utente.dataNascimento.month+1}/${utente.dataNascimento.year+1900}")
     }
 
     fun navegaListaUtentes() {

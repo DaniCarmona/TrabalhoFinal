@@ -60,6 +60,14 @@ class ApagarUtenteFragment : Fragment(){
     }
 
     fun apaga() {
+        if (DadosApp.utenteSelecionado!!.dose != 0){
+            Toast.makeText(
+                requireContext(),
+                R.string.nao_apagar_utente,
+                Toast.LENGTH_LONG
+            ).show()
+            navegaListaUtentes()
+        }
         val uriUtente = Uri.withAppendedPath(
             ContentProviderArmazemVacinas.ENDERECO_UTENTES,
             DadosApp.utenteSelecionado!!.id.toString()

@@ -60,7 +60,7 @@ class ListaUtentesFragment : Fragment(), LoaderManager.LoaderCallbacks<Cursor> {
     }
 
     fun navegaNovaDose() {
-        //todo: navegar para o fragmento para nova dose
+        findNavController().navigate(R.id.action_ListaUtentesFragment_to_novaDoseFragment)
     }
 
     fun navegaVerDadosUtente() {

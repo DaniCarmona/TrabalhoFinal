@@ -27,8 +27,8 @@ class AdapterDoses(val fragment: ListaDosesFragment) : RecyclerView.Adapter<Adap
             this.dose = dose
 
             textViewNomeDose.text = dose.nomeUtente
-            textViewDose.text = dose.dose.toString()
-            textViewData.text = ("${dose.data.day}/${dose.data.month+1}/${dose.data.year+1900}")
+            textViewDose.text = "Dose: ${dose.dose.toString()}"
+            textViewData.text = ("${dose.data.date}/${dose.data.month+1}/${dose.data.year+1900}")
             textViewVacina.text = dose.nomeVacina
         }
     }

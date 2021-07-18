@@ -12,6 +12,7 @@ import android.widget.EditText
 import android.widget.SimpleCursorAdapter
 import android.widget.Spinner
 import android.widget.Toast
+import androidx.core.view.iterator
 import androidx.loader.app.LoaderManager
 import androidx.loader.content.CursorLoader
 import androidx.loader.content.Loader
@@ -67,7 +68,7 @@ class NovaDoseFragment : Fragment(), LoaderManager.LoaderCallbacks<Cursor> {
         val idVacina = spinnerVacinas.selectedItemId
         utente.dose = utente.dose+1
 
-        val dose = Dose(data = Date(data.get(Calendar.DATE),data.get(Calendar.MONTH),data.get(Calendar.YEAR)), dose = utente.dose, idUtente = DadosApp.utenteSelecionado!!.id, idVacina = idVacina)
+        val dose = Dose(data =data.time, dose = utente.dose, idUtente = DadosApp.utenteSelecionado!!.id, idVacina = idVacina)
 
         val uri = activity?.contentResolver?.insert(
             ContentProviderArmazemVacinas.ENDERECO_DOSES,
