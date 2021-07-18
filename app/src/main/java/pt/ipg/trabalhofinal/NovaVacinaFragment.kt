@@ -74,9 +74,16 @@ class NovaVacinaFragment : Fragment(){
             return
         }
 
-        val stockInicial = editTextStockInicial.text.toString().toInt()
-        if (stockInicial==0) {
+        val stockInicialString = editTextStockInicial.text.toString()
+        if (stockInicialString.isEmpty()) {
             editTextStockInicial.setError(getString(R.string.preencha_stock_inicial))
+            editTextStockInicial.requestFocus()
+            return
+        }
+
+        val stockInicial = stockInicialString.toInt()
+        if (stockInicial <= 0) {
+            editTextStockInicial.setError(getString(R.string.valor_invalido))
             editTextStockInicial.requestFocus()
             return
         }

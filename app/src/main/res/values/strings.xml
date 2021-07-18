@@ -12,6 +12,7 @@
     <string name="menu_principal_fragment_label">Menu Principal</string>
     <string name="nova_vacina_fragment_label">Nova Vacina</string>
     <string name="editar_vacina_fragment_label">Editar Vacina</string>
+    <string name="aumentar_stock_vacina_fragment_label">Aumentar o Stock da Vacina</string>
     <string name="next">Next</string>
     <string name="previous">Previous</string>
 
@@ -57,5 +58,9 @@
     <string name="erro_inserir_vacina">Erro ao inserir vacina</string>
     <string name="vacina_guardada_sucesso">Vacina guardada com sucesso</string>
     <string name="erro_editar_vacina">Erro ao editar vacina</string>
-
+    <string name="quantidade">Quantidade</string>
+    <string name="stock_aumentado_sucesso">Stock aumentado com sucesso</string>
+    <string name="erro_aumentar_stock">Erro ao aumenatr o stock</string>
+    <string name="preencha_quantidade">Preencha a quantidade</string>
+    <string name="valor_invalido">Preencha com um valor superior a 0</string>
 </resources>

@@ -71,6 +71,7 @@ class MainActivity : AppCompatActivity() {
                 R.menu.menu_lista_vacinas -> (DadosApp.fragment as ListaVacinasFragment).processaOpcaoMenu(item)
                 R.menu.menu_nova_vacina -> (DadosApp.fragment as NovaVacinaFragment).processaOpcaoMenu(item)
                 R.menu.menu_editar_vacinas -> (DadosApp.fragment as EditarVacinaFragment).processaOpcaoMenu(item)
+                R.menu.menu_aumentar_stock -> (DadosApp.fragment as AumentarStockFragment).processaOpcaoMenu(item)
                 else -> false
             }
         }
@@ -92,5 +93,7 @@ class MainActivity : AppCompatActivity() {
 
     fun atualizaMenuListaVacinas(mostraBotoesVacina : Boolean) {
         menu.findItem(R.id.action_editar_vacina).setVisible(mostraBotoesVacina)
+        menu.findItem(R.id.action_aumentar_stock).setVisible(mostraBotoesVacina)
+
     }
 }

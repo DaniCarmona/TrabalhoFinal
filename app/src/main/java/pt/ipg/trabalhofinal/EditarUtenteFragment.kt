@@ -87,11 +87,7 @@ class EditarUtenteFragment : Fragment(){
         }
 
         val dataNascimento = calendarViewDataNascimento.date
-        /* if (dataNascimento == 0) {
-             editTextDiaNascimento.setError(getString(R.string.preencha_data_nascimento))
-             editTextDiaNascimento.requestFocus()
-             return
-         }*/
+
 
         val utente = DadosApp.utenteSelecionado!!
         utente.nome = nome

@@ -68,14 +68,14 @@ class AdapterUtentes(val fragment: ListaUtentesFragment) : RecyclerView.Adapter<
         fun calculaIdade( dataNascimento: Date): Int{
             val idade:Int
             if((data.get(Calendar.MONTH)+1) > dataNascimento.month){
-                 idade = data.get(Calendar.YEAR) - (dataNascimento.year)
+                 idade = data.get(Calendar.YEAR)-1900 - (dataNascimento.year)
             }else if((data.get(Calendar.MONTH)+1) < dataNascimento.month){
-                 idade = data.get(Calendar.YEAR) - (dataNascimento.year) -1
+                 idade = data.get(Calendar.YEAR)-1900 - (dataNascimento.year) -1
             }else {
                 if((data.get(Calendar.DATE)) >= dataNascimento.day){
-                    idade = data.get(Calendar.YEAR) - (dataNascimento.year)
+                    idade = data.get(Calendar.YEAR)-1900 - (dataNascimento.year)
                 }else{
-                    idade = data.get(Calendar.YEAR) - (dataNascimento.year)-1
+                    idade = data.get(Calendar.YEAR)-1900 - (dataNascimento.year)-1
                 }
             }
 

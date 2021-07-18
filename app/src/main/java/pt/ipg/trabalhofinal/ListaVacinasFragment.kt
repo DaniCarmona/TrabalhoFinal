@@ -59,6 +59,10 @@ class ListaVacinasFragment : Fragment(), LoaderManager.LoaderCallbacks<Cursor> {
         findNavController().navigate(R.id.action_listaVacinasFragment_to_editarVacinaFragment)
     }
 
+    fun navegaAumentarStock() {
+        //findNavController().navigate(R.id.action_ListaUtentesFragment_to_verDadosUtenteFragment)
+    }
+
     fun navegaMenuPrincipal() {
         findNavController().navigate(R.id.action_listaVacinasFragment_to_menuPrincipalFragment)
     }
@@ -67,6 +71,7 @@ class ListaVacinasFragment : Fragment(), LoaderManager.LoaderCallbacks<Cursor> {
         when (item.itemId) {
             R.id.action_nova_vacina -> navegaNovaVacina()
             R.id.action_editar_vacina -> navegaEditarVacina()
+            R.id.action_aumentar_stock -> navegaAumentarStock()
             R.id.action_menu_princial -> navegaMenuPrincipal()
             else -> return false
         }

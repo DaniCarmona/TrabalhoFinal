@@ -44,7 +44,7 @@ class EditarVacinaFragment : Fragment(){
 
         editTextNomeVacina.setText(DadosApp.vacinaSelecionada!!.nomeVacina)
         editTextEmailFornecedor.setText(DadosApp.vacinaSelecionada!!.email)
-        editTextStock.setText(DadosApp.vacinaSelecionada!!.stock)
+        editTextStock.setText(DadosApp.vacinaSelecionada!!.stock.toString())
     }
 
     fun navegaListaVacinas() {
@@ -66,12 +66,20 @@ class EditarVacinaFragment : Fragment(){
             return
         }
 
-        val stock = editTextStock.text.toString().toInt()
-        if (stock==0) {
+        val stockString = editTextStock.text.toString()
+        if (stockString.isEmpty()) {
             editTextStock.setError(getString(R.string.preencha_stock))
             editTextStock.requestFocus()
             return
         }
+
+        val stock = stockString.toInt()
+        if (stock <= 0) {
+            editTextStock.setError(getString(R.string.valor_invalido))
+            editTextStock.requestFocus()
+            return
+        }
+
 
         val vacina = DadosApp.vacinaSelecionada!!
         vacina.nomeVacina = nomeVacina
