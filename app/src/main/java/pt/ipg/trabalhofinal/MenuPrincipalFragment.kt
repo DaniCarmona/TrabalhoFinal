@@ -58,7 +58,7 @@ class MenuPrincipalFragment : Fragment(){
     }
 
     fun navegaListaDoses() {
-        //findNavController().navigate(R.id.action_menuPrincipalFragment_to_listaDosesFragment)
+        findNavController().navigate(R.id.action_menuPrincipalFragment_to_listaDosesFragment)
     }
 
     fun navegaListaVacinas() {

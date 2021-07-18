@@ -133,4 +133,9 @@
             android:id="@+id/action_listaDosesFragment_to_menuPrincipalFragment"
             app:destination="@id/menuPrincipalFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/novaDoseFragment"
+        android:name="pt.ipg.trabalhofinal.NovaDoseFragment"
+        android:label="fragment_nova_dose"
+        tools:layout="@layout/fragment_nova_dose" />
 </navigation>

@@ -63,4 +63,6 @@
     <string name="erro_aumentar_stock">Erro ao aumenatr o stock</string>
     <string name="preencha_quantidade">Preencha a quantidade</string>
     <string name="valor_invalido">Preencha com um valor superior a 0</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
